@@ -7,115 +7,38 @@ export default function Navbar() {
 
       {/* Logo */}
       <Link to="/" className="flex-shrink-0">
-        <h1 className="text-3xl font-bold text-[#1E3A7B]">
+        <h1 className="text-2xl font-bold text-[#1E3A7B]">
           AEROMAR
         </h1>
-
-        <p className="text-sm tracking-[4px] text-[#1A73C8]">
+        <p className="text-xs tracking-[4px] text-[#C8960A]">
           GLOBAL LOGISTICS
         </p>
       </Link>
 
       {/* Navigation */}
-      <div className="hidden lg:flex items-center gap-10">
-        
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `font-semibold transition-all duration-300 ${
-              isActive
-                ? "text-[#C8960A]"
-                : "text-[#1E3A7B] hover:text-[#C8960A]"
-            }`
-          }
-        >
-          HOME
-        </NavLink>
-
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `font-semibold transition-all duration-300 ${
-              isActive
-                ? "text-[#C8960A]"
-                : "text-[#1E3A7B] hover:text-[#C8960A]"
-            }`
-          }
-        >
-          ABOUT
-        </NavLink>
-
-        <NavLink
-          to="/services"
-          className={({ isActive }) =>
-            `font-semibold transition-all duration-300 ${
-              isActive
-                ? "text-[#C8960A]"
-                : "text-[#1E3A7B] hover:text-[#C8960A]"
-            }`
-          }
-        >
-          SERVICES
-        </NavLink>
-
-        <NavLink
-          to="/leadership"
-          className={({ isActive }) =>
-            `font-semibold transition-all duration-300 ${
-              isActive
-                ? "text-[#C8960A]"
-                : "text-[#1E3A7B] hover:text-[#C8960A]"
-            }`
-          }
-        >
-          LEADERSHIP
-        </NavLink>
-
-        <NavLink
-          to="/blog"
-          className={({ isActive }) =>
-            `font-semibold transition-all duration-300 ${
-              isActive
-                ? "text-[#C8960A]"
-                : "text-[#1E3A7B] hover:text-[#C8960A]"
-            }`
-          }
-        >
-          BLOG
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `font-semibold transition-all duration-300 ${
-              isActive
-                ? "text-[#C8960A]"
-                : "text-[#1E3A7B] hover:text-[#C8960A]"
-            }`
-          }
-        >
-          CONTACT
-        </NavLink>
-
+      <div className="hidden lg:flex items-center gap-8">
+        {["HOME", "ABOUT", "SERVICES", "LEADERSHIP", "BLOG", "CONTACT"].map((label) => (
+          <NavLink
+            key={label}
+            to={`/${label === "HOME" ? "" : label.toLowerCase()}`}
+            className={({ isActive }) =>
+              `text-xs font-semibold tracking-wide transition-all duration-300 ${
+                isActive ? "text-[#C8960A]" : "text-[#1E3A7B] hover:text-[#C8960A]"
+              }`
+            }
+          >
+            {label}
+          </NavLink>
+        ))}
       </div>
 
+      {/* CTA Button */}
       <Link
         to="/quote"
-        className="
-          bg-[#C8960A]
-          px-6
-          py-3
-          font-semibold
-          text-[#1E3A7B]
-          flex
-          items-center
-          gap-3
-          hover:opacity-90
-          transition-all
-        "
+        className="bg-[#1E3A7B] px-5 py-2.5 text-xs font-semibold text-white flex items-center gap-2 hover:opacity-90 transition-all"
       >
         GET A QUOTE
-        <ArrowRight size={18} />
+        <ArrowRight size={14} />
       </Link>
     </nav>
   );

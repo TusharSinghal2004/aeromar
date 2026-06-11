@@ -1,6 +1,6 @@
 import Navbar from "../components/layout/Navbar";
 import HeroSection from "../components/home/HeroSection";
-import StatsStrip from "../components/home/StatsStrip";
+import TrustBar from "../components/home/TrustBar";
 import AboutPreview from "../components/home/AboutPreview";
 import ServicesPreview from "../components/home/ServicesPreview";
 import ServicesGrid from "../components/home/ServicesGrid";
@@ -16,10 +16,10 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
-      <StatsStrip />
+      <TrustBar />
+      <ServicesGrid />
       <AboutPreview />
       <ServicesPreview />
-      <ServicesGrid />
       <WhyChooseUs />
       <LeadershipSection />
       <GlobalCoverage />
