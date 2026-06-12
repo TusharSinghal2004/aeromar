@@ -2,30 +2,29 @@ import Navbar from "../components/layout/Navbar";
 import HeroSection from "../components/home/HeroSection";
 import TrustBar from "../components/home/TrustBar";
 import AboutPreview from "../components/home/AboutPreview";
-import ServicesPreview from "../components/home/ServicesPreview";
 import ServicesGrid from "../components/home/ServicesGrid";
-import WhyChooseUs from "../components/home/WhyChooseUs";
+import SmartTechnology from "../components/home/SmartTechnology";
+import IndustriesWeServe from "../components/home/IndustriesWeServe";
 import LeadershipSection from "../components/home/LeadershipSection";
 import GlobalCoverage from "../components/home/GlobalCoverage";
-import ProcessSection from "../components/home/ProcessSection";
 import CTASection from "../components/home/CTASection";
 import Footer from "../components/layout/Footer";
+import PageTransition from "../components/common/PageTransition";
 
 export default function Home() {
   return (
-    <>
+    <PageTransition>
       <Navbar />
       <HeroSection />
       <TrustBar />
       <ServicesGrid />
       <AboutPreview />
-      <ServicesPreview />
-      <WhyChooseUs />
-      <LeadershipSection />
+      <SmartTechnology />
+      <IndustriesWeServe />
       <GlobalCoverage />
-      <ProcessSection />
+      <LeadershipSection />
       <CTASection />
       <Footer />
-    </>
+    </PageTransition>
   );
 }

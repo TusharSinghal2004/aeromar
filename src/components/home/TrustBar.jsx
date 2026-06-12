@@ -10,6 +10,20 @@ const carriers = [
   { name: "Wan Hai",  icon: Navigation },
 ];
 
+function useInView(threshold = 0.15) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return [ref, inView];
+}
+
 function AnimatedCounter({ target, duration = 1800 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -41,12 +55,23 @@ function AnimatedCounter({ target, duration = 1800 }) {
 }
 
 export default function StatsStrip() {
+  const [statsRef, statsInView] = useInView(0.2);
+  const [carrierRef, carrierInView] = useInView(0.2);
+
   return (
     <section className="bg-white py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 text-center">
+        <div
+          ref={statsRef}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 text-center"
+          style={{
+            opacity: statsInView ? 1 : 0,
+            transform: statsInView ? "translateY(0px)" : "translateY(32px)",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
+          }}
+        >
           <div>
             <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold">
               <AnimatedCounter target={30} />+
@@ -75,7 +100,14 @@ export default function StatsStrip() {
         <div className="border-t border-gray-200 my-8" />
 
         {/* Carrier Strip */}
-        <div>
+        <div
+          ref={carrierRef}
+          style={{
+            opacity: carrierInView ? 1 : 0,
+            transform: carrierInView ? "translateY(0px)" : "translateY(32px)",
+            transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
+          }}
+        >
           <p className="text-center text-xs font-semibold text-[#1E3A7B] tracking-widest uppercase mb-6">
             Ocean Carrier Partners
           </p>
@@ -86,10 +118,7 @@ export default function StatsStrip() {
                 className="group flex flex-col items-center gap-1.5 cursor-default"
               >
                 <div className="w-12 h-12 rounded-full border border-[#1E3A7B]/20 bg-[#1E3A7B]/5 flex items-center justify-center transition-all duration-300 group-hover:bg-[#1E3A7B]/10 group-hover:border-[#1E3A7B]/40">
-                  <Icon
-                    size={20}
-                    className="text-[#1E3A7B] transition-colors duration-300"
-                  />
+                  <Icon size={20} className="text-[#1E3A7B] transition-colors duration-300" />
                 </div>
                 <span className="text-xs font-semibold text-[#1E3A7B]/60 tracking-wide transition-colors duration-300 group-hover:text-[#1E3A7B]">
                   {name}

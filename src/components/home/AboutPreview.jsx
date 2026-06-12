@@ -1,14 +1,40 @@
+import { useEffect, useRef, useState } from "react";
 import aboutImage from "../../assets/images/about-logistics.png";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
 
+function useInView(threshold = 0.15) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return [ref, inView];
+}
+
 export default function AboutPreview() {
+  const [leftRef, leftInView] = useInView(0.1);
+  const [rightRef, rightInView] = useInView(0.1);
+
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT IMAGE */}
-          <div className="relative">
+          <div
+            ref={leftRef}
+            className="relative"
+            style={{
+              opacity: leftInView ? 1 : 0,
+              transform: leftInView ? "translateY(0px)" : "translateY(48px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+          >
 
             {/* FMC Badge */}
             <div className="absolute -top-4 -left-4 z-20 bg-[#C8960A] px-5 py-3 shadow-md">
@@ -41,7 +67,14 @@ export default function AboutPreview() {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div>
+          <div
+            ref={rightRef}
+            style={{
+              opacity: rightInView ? 1 : 0,
+              transform: rightInView ? "translateY(0px)" : "translateY(48px)",
+              transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
+            }}
+          >
 
             <div className="flex items-center gap-2 mb-5">
               <div className="w-6 h-0.5 bg-[#C8960A]" />
