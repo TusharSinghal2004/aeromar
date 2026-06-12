@@ -47,6 +47,8 @@ export default function HeroSection() {
           </button>
         </div>
       </div>
+      {/* Bottom fade into page */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F8F9FB] to-transparent" />
     </section>
   );
 }

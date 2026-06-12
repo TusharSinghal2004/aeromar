@@ -1,78 +1,137 @@
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import heroImage from "../../assets/images/hero-banner.png";
+
+const heroImage =
+  "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80";
 
 export default function ServicesHero() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 60);
+    return () => clearTimeout(t);
+  }, []);
+
+  const fade = (delay) => ({
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(22px)",
+    transition: `opacity 0.75s ease ${delay}s, transform 0.75s ease ${delay}s`,
+  });
+
   return (
     <section className="relative min-h-[65vh] flex items-center overflow-hidden">
-
-      {/* Background Image */}
+      {/* Background */}
       <img
         src={heroImage}
         alt="Aeromar Services"
         className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          transform: visible ? "scale(1)" : "scale(1.06)",
+          transition: "transform 1.5s cubic-bezier(0.16,1,0.3,1)",
+        }}
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#081229]/95 via-[#081229]/85 to-[#081229]/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#081229]/96 via-[#081229]/82 to-[#081229]/50" />
+
+      {/* Vertical gold accent */}
+      <div
+        className="absolute left-0 top-0 w-[3px] bg-[#C8960A]"
+        style={{
+          height: visible ? "100%" : "0%",
+          transition: "height 1s cubic-bezier(0.16,1,0.3,1) 0.2s",
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 w-full py-16 md:py-20">
-
-        <div className="max-w-4xl">
-
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.15em] mb-6">
-            <span className="text-white/70">Home</span>
-
-            <span className="text-white/40">/</span>
-
-            <span className="text-[#C8960A]">
-              Services
-            </span>
-          </div>
-
-          {/* Section Label */}
-          <div className="flex items-center gap-4 mb-5">
-            <div className="w-12 h-[2px] bg-[#C8960A]" />
-
-            <span className="uppercase tracking-[0.22em] text-[#C8960A] text-xs font-semibold">
-              Services
+        <div className="max-w-3xl">
+          {/* Label */}
+          <div style={fade(0.15)} className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-[2px] bg-[#C8960A]" />
+            <span className="uppercase tracking-[0.25em] text-[#C8960A] text-[10px] font-bold">
+              Our Services
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.08] max-w-4xl">
+          <h1
+            style={fade(0.26)}
+            className="text-3xl md:text-4xl lg:text-[2.8rem] font-extrabold text-white leading-[1.1]"
+          >
             Six tightly integrated
             <br />
-            services. One accountable
+            services. One{" "}
+            <span className="relative inline-block">
+              accountable
+              <span
+                className="absolute bottom-0 left-0 h-[3px] bg-[#C8960A]"
+                style={{
+                  width: visible ? "100%" : "0%",
+                  transition: "width 0.8s cubic-bezier(0.16,1,0.3,1) 0.9s",
+                }}
+              />
+            </span>
             <br />
             team.
           </h1>
 
           {/* Description */}
-          <p className="mt-5 max-w-3xl text-base md:text-lg text-white/80 leading-7">
-            From ocean and air freight to customs brokerage,
-            warehousing, drayage, and door-to-door programs —
-            Aeromar engineers the full move.
+          <p
+            style={fade(0.38)}
+            className="mt-5 max-w-xl text-sm md:text-base text-white/75 leading-7"
+          >
+            From ocean and air freight to customs brokerage, warehousing,
+            drayage, and door-to-door programs — Aeromar engineers the full
+            move.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-
-            <button className="bg-[#C8960A] text-[#081229] font-semibold px-6 py-3 flex items-center justify-center gap-2 hover:opacity-90 transition">
-              Request A Quote
-              <ArrowRight size={16} />
-            </button>
-
-            <button className="border border-white/30 text-white font-semibold px-6 py-3 hover:bg-white/10 transition">
-              Contact Team
-            </button>
-
+          {/* Stats row */}
+          <div
+            style={fade(0.48)}
+            className="mt-7 flex gap-8 border-t border-white/10 pt-6"
+          >
+            {[
+              { value: "6", label: "Core Services" },
+              { value: "5", label: "Continents" },
+              { value: "4hr", label: "Quote Response" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <p className="text-[#C8960A] text-xl font-extrabold leading-none">
+                  {value}
+                </p>
+                <p className="text-white/50 text-[10px] uppercase tracking-widest mt-1">
+                  {label}
+                </p>
+              </div>
+            ))}
           </div>
 
-        </div>
+          {/* CTA Buttons */}
+          <div
+            style={fade(0.56)}
+            className="mt-7 flex flex-col sm:flex-row gap-3"
+          >
+            <button className="group bg-[#C8960A] text-white font-bold text-xs tracking-widest px-7 py-3 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-all hover:-translate-y-0.5">
+              REQUEST A QUOTE
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
 
+            <button className="group border border-white/25 text-white font-bold text-xs tracking-widest px-7 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all hover:-translate-y-0.5">
+              CONTACT TEAM
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
+          </div>
+        </div>
       </div>
+      {/* Bottom fade into page */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F8F9FB] to-transparent" />
     </section>
   );
 }

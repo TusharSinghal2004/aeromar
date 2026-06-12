@@ -1,7 +1,19 @@
-export default function Quote() {
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import PageTransition from "../components/common/PageTransition";
+import ContactHero from "../components/contact/ContactHero";
+import GetAQuote from "../components/contact/GetAQuote";
+import Maps from "../components/contact/Maps";
+
+
+export default function Leadership() {
   return (
-    <div>
-      <h1>Quote Page</h1>
-    </div>
+    <PageTransition>
+      <Navbar />
+      <ContactHero />
+      <GetAQuote />
+      <Maps />
+      <Footer />
+    </PageTransition>
   );
 }

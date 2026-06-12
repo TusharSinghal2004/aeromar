@@ -1,6 +1,5 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-
 import DoorToDoorLogisticsHero from "../components/service_pages/door-to-door-logistics/DoorToDoorLogisticsHero";
 import DoorToDoorLogisticsOverview from "../components/service_pages/door-to-door-logistics/DoorToDoorLogisticsOverview";
 import IndustriesServed from "../components/service_pages/door-to-door-logistics/IndustriesServed";

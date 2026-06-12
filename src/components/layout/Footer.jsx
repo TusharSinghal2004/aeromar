@@ -1,157 +1,170 @@
-import {
-  Ship,
-  MapPin,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { Ship, MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="bg-[#081229] text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Main Footer */}
-        <div className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Company */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 bg-[#C8960A] flex items-center justify-center">
-                <Ship size={20} className="text-[#081229]" />
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 bg-[#C8960A] flex items-center justify-center flex-shrink-0">
+                <Ship size={18} className="text-[#081229]" />
               </div>
-
               <div>
-                <h3 className="text-xl font-extrabold">
-                  AEROMAR
-                </h3>
-
-                <p className="text-[#C8960A] text-xs font-semibold tracking-[0.15em]">
-                  GLOBAL LOGISTICS
-                </p>
+                <h3 className="text-base font-extrabold tracking-wide">AEROMAR</h3>
+                <p className="text-[#C8960A] text-[10px] font-semibold tracking-[3px]">GLOBAL LOGISTICS</p>
               </div>
             </div>
 
-            <p className="text-gray-300 text-sm leading-7">
+            <p className="text-gray-400 text-xs leading-6 mb-5">
               FMC-Licensed NVOCC & Freight Forwarding.
               Moving the world responsibly — connecting
               USA, India, the Middle East, Europe,
               and Southeast Asia.
             </p>
 
-            <div className="mt-5">
-              <h4 className="uppercase tracking-[0.2em] text-[#C8960A] text-xs font-semibold">
+            <div className="mb-5">
+              <p className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-1">
                 FMC License
-              </h4>
-
-              <p className="mt-1 text-gray-400 text-sm">
-                OTI License No. 000000NF
               </p>
+              <p className="text-gray-500 text-xs">OTI License No. 019576</p>
             </div>
 
-            {/* Placeholder Social Boxes */}
-            <div className="flex gap-2 mt-5">
-              <div className="w-9 h-9 border border-[#20304F]" />
-              <div className="w-9 h-9 border border-[#20304F]" />
-              <div className="w-9 h-9 border border-[#20304F]" />
+            {/* Social Icons */}
+            <div className="flex gap-2">
+              {[].map((Icon, i) => (
+                <button
+                  key={i}
+                  className="w-8 h-8 border border-[#20304F] flex items-center justify-center hover:border-[#C8960A] hover:text-[#C8960A] transition-all duration-300 text-gray-500"
+                >
+                  <Icon size={13} />
+                </button>
+              ))}
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="uppercase tracking-[0.2em] text-[#C8960A] text-xs font-semibold mb-5">
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-5">
               Services
             </h4>
-
-            <ul className="space-y-3 text-gray-300 text-sm">
-              <li><a href="#" className="hover:text-white transition">Ocean Freight</a></li>
-              <li><a href="#" className="hover:text-white transition">Air Freight</a></li>
-              <li><a href="#" className="hover:text-white transition">Customs Brokerage</a></li>
-              <li><a href="#" className="hover:text-white transition">Warehousing</a></li>
-              <li><a href="#" className="hover:text-white transition">Trucking & Drayage</a></li>
-              <li><a href="#" className="hover:text-white transition">Door-To-Door Logistics</a></li>
+            <ul className="space-y-2.5">
+              {[
+                "Ocean Freight",
+                "Air Freight",
+                "Customs Brokerage",
+                "Warehousing",
+                "Trucking & Drayage",
+                "Door-To-Door Logistics",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    to="/services"
+                    className="text-gray-400 text-xs hover:text-white transition-colors duration-200"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="uppercase tracking-[0.2em] text-[#C8960A] text-xs font-semibold mb-5">
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-5">
               Company
             </h4>
-
-            <ul className="space-y-3 text-gray-300 text-sm">
-              <li><a href="#" className="hover:text-white transition">About</a></li>
-              <li><a href="#" className="hover:text-white transition">Leadership</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Request Quote</a></li>
-              <li><a href="#" className="hover:text-white transition">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition">Terms & Conditions</a></li>
+            <ul className="space-y-2.5 mb-7">
+              {[
+                { label: "About", to: "/about" },
+                { label: "Leadership", to: "/leadership" },
+                { label: "Blog", to: "/blog" },
+                { label: "Request Quote", to: "/quote" },
+                { label: "Contact", to: "/contact" },
+                { label: "Privacy Policy", to: "/privacy" },
+                { label: "Terms & Conditions", to: "/terms" },
+              ].map(({ label, to }) => (
+                <li key={label}>
+                  <Link
+                    to={to}
+                    className="text-gray-400 text-xs hover:text-white transition-colors duration-200"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
-            <div className="mt-6">
-              <h4 className="uppercase tracking-[0.2em] text-[#C8960A] text-xs font-semibold mb-4">
-                Coming Soon
-              </h4>
-
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>Client Portal</li>
-                <li>Shipment Tracking</li>
-                <li>Resources Library</li>
-                <li>Market Intelligence</li>
-              </ul>
-            </div>
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-3">
+              Coming Soon
+            </h4>
+            <ul className="space-y-2">
+              {["Client Portal", "Shipment Tracking", "Resources Library", "Market Intelligence"].map((item) => (
+                <li key={item} className="text-gray-600 text-xs flex items-center gap-2">
+                  <div className="w-1 h-1 rounded-full bg-[#C8960A]/40" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="uppercase tracking-[0.2em] text-[#C8960A] text-xs font-semibold mb-5">
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-5">
               Contact
             </h4>
 
-            <div className="space-y-4 text-gray-300 text-sm">
-
+            <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin
-                  size={16}
-                  className="text-[#C8960A] mt-1 flex-shrink-0"
-                />
-
-                <p>
-                  1234 Harbor Boulevard
-                  <br />
+                <MapPin size={13} className="text-[#C8960A] mt-0.5 flex-shrink-0" />
+                <p className="text-gray-400 text-xs leading-5">
+                  1234 Harbor Boulevard<br />
                   Edison, NJ 08837, USA
                 </p>
               </div>
 
               <div className="flex items-center gap-3">
-                <Phone
-                  size={16}
-                  className="text-[#C8960A] flex-shrink-0"
-                />
-                <p>+1 (732) 555-1234</p>
+                <Phone size={13} className="text-[#C8960A] flex-shrink-0" />
+                <a href="tel:+17325551234" className="text-gray-400 text-xs hover:text-white transition-colors duration-200">
+                  +1 (732) 555-1234
+                </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <Mail
-                  size={16}
-                  className="text-[#C8960A] flex-shrink-0"
-                />
-                <p>info@aeromarglobal.com</p>
+                <Mail size={13} className="text-[#C8960A] flex-shrink-0" />
+                <a href="mailto:info@aeromarglobal.com" className="text-gray-400 text-xs hover:text-white transition-colors duration-200">
+                  info@aeromarglobal.com
+                </a>
               </div>
+            </div>
 
+            {/* Mini CTA */}
+            <div className="mt-7 border border-[#1E3A7B]/40 rounded-xl p-4">
+              <p className="text-white text-xs font-semibold mb-1">Ready to ship?</p>
+              <p className="text-gray-500 text-[11px] mb-3">Get a quote in under 2 minutes.</p>
+              <Link
+                to="/quote"
+                className="w-full bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-[#FFFFFF] font-bold text-xs py-2 flex items-center justify-center rounded-lg"
+                
+              >
+                Get a Quote
+              </Link>
             </div>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#20304F] py-4 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-gray-400 text-xs md:text-sm">
-            © 2026 Aeromar Global Logistics Solutions LLC.
-            All rights reserved.
+        <div className="border-t border-[#20304F] py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-gray-600 text-[11px]">
+            © 2026 Aeromar Global Logistics Solutions LLC. All rights reserved.
           </p>
-
-          <p className="text-gray-500 uppercase tracking-[0.2em] text-xs md:text-sm">
+          <p className="text-gray-600 uppercase tracking-[3px] text-[10px]">
             Moving The World Responsibly
           </p>
         </div>

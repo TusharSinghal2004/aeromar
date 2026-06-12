@@ -112,7 +112,7 @@ export default function ProcurementSection() {
               ))}
             </div>
 
-            <button className="w-full bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-[#081229] font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2">
+            <button className="w-full bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-[#FFFFFF] font-bold text-sm py-3 rounded-xl flex items-center justify-center gap-2">
               Connect with Eudora
               <ArrowUpRight size={15} />
             </button>
