@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from "react";
-import { Ship, Anchor, Globe, Waves, Container, Navigation } from "lucide-react";
+import {
+  Ship,
+  Anchor,
+  Globe,
+  Waves,
+  Container,
+  Navigation,
+} from "lucide-react";
 
 const carriers = [
-  { name: "Maersk",    icon: Ship },
-  { name: "CMA CGM",  icon: Anchor },
-  { name: "ONE",      icon: Globe },
+  { name: "Maersk", icon: Ship },
+  { name: "CMA CGM", icon: Anchor },
+  { name: "ONE", icon: Globe },
   { name: "Yang Ming", icon: Waves },
-  { name: "MSC",      icon: Container },
-  { name: "Wan Hai",  icon: Navigation },
+  { name: "MSC", icon: Container },
+  { name: "Wan Hai", icon: Navigation },
 ];
 
 function useInView(threshold = 0.15) {
@@ -15,8 +22,13 @@ function useInView(threshold = 0.15) {
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
-      { threshold }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -45,7 +57,7 @@ function AnimatedCounter({ target, duration = 1800 }) {
           requestAnimationFrame(tick);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -63,41 +75,43 @@ export default function StatsStrip() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Stats */}
-        <div
-          ref={statsRef}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 text-center"
-          style={{
-            opacity: statsInView ? 1 : 0,
-            transform: statsInView ? "translateY(0px)" : "translateY(32px)",
-            transition: "opacity 0.6s ease, transform 0.6s ease",
-          }}
-        >
-          <div>
-            <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold">
-              <AnimatedCounter target={30} />+
-            </h2>
-            <p className="text-gray-500 text-sm mt-1">Years Experience</p>
-          </div>
-          <div>
-            <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold leading-tight">FMC</h2>
-            <p className="text-[#C8960A] text-xs font-semibold tracking-wide mt-0.5">Licensed #019576</p>
-          </div>
-          <div>
-            <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold">
-              <AnimatedCounter target={6} />
-            </h2>
-            <p className="text-gray-500 text-sm mt-1">Ocean Carriers</p>
-          </div>
-          <div>
-            <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold">
-              <AnimatedCounter target={3} />
-            </h2>
-            <p className="text-gray-500 text-sm mt-1">U.S. Warehouse Locations</p>
-          </div>
-        </div>
+       <div
+  ref={statsRef}
+  className="grid grid-cols-4 gap-x-6 text-center items-center"
+  style={{
+    opacity: statsInView ? 1 : 0,
+    transform: statsInView ? "translateY(0px)" : "translateY(32px)",
+    transition: "opacity 0.6s ease, transform 0.6s ease",
+  }}
+>
+  <div className="flex flex-col items-center">
+    <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold leading-tight whitespace-nowrap">
+      150+
+    </h2>
+    <p className="text-gray-500 text-sm mt-1">Countries Served</p>
+  </div>
+  <div className="flex flex-col items-center">
+    <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold whitespace-nowrap">
+      <AnimatedCounter target={98} />%
+    </h2>
+    <p className="text-gray-500 text-sm mt-1">On Time Delivery</p>
+  </div>
+  <div className="flex flex-col items-center">
+    <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold whitespace-nowrap">
+      <AnimatedCounter target={24} />/7
+    </h2>
+    <p className="text-gray-500 text-sm mt-1">Human Support</p>
+  </div>
+  <div className="flex flex-col items-center">
+    <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold whitespace-nowrap">
+      <AnimatedCounter target={30} />+
+    </h2>
+    <p className="text-gray-500 text-sm mt-1">Years Experience</p>
+  </div>
+</div>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 my-8" />
+        <div className="border-t border-gray-200 my-11" />
 
         {/* Carrier Strip */}
         <div
@@ -118,7 +132,10 @@ export default function StatsStrip() {
                 className="group flex flex-col items-center gap-1.5 cursor-default"
               >
                 <div className="w-12 h-12 rounded-full border border-[#1E3A7B]/20 bg-[#1E3A7B]/5 flex items-center justify-center transition-all duration-300 group-hover:bg-[#1E3A7B]/10 group-hover:border-[#1E3A7B]/40">
-                  <Icon size={20} className="text-[#1E3A7B] transition-colors duration-300" />
+                  <Icon
+                    size={20}
+                    className="text-[#1E3A7B] transition-colors duration-300"
+                  />
                 </div>
                 <span className="text-xs font-semibold text-[#1E3A7B]/60 tracking-wide transition-colors duration-300 group-hover:text-[#1E3A7B]">
                   {name}
@@ -127,7 +144,6 @@ export default function StatsStrip() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

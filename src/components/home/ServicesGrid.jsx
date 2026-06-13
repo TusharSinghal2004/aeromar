@@ -50,91 +50,85 @@ export default function ServicesGrid() {
   const [gridRef, gridInView] = useInView(0.1);
 
   return (
-    <section className="bg-[#F8F9FB] py-16">
+    <section className="bg-[#F8F9FB] py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-        {/* Section Header */}
         <div
-          ref={headerRef}
-          className="grid lg:grid-cols-2 gap-8 items-end mb-12"
-          style={{
-            opacity: headerInView ? 1 : 0,
-            transform: headerInView ? "translateY(0px)" : "translateY(32px)",
-            transition: "opacity 0.6s ease, transform 0.6s ease",
-          }}
-        >
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-0.5 bg-[#C8960A]" />
-              <p className="uppercase tracking-[4px] text-[#C8960A] font-semibold text-xs">
-                What We Do
-              </p>
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight">
-              End-to-End Logistics,<br />
-              Without the Headache
-            </h2>
-          </div>
-          <p className="text-gray-500 text-sm leading-relaxed lg:max-w-md lg:ml-auto">
-            From ocean freight to last-mile delivery — we connect every link in your
-            supply chain with expertise that keeps you in control and a team that
-            genuinely cares.
-          </p>
-        </div>
+  ref={headerRef}
+  className="mb-12"
+  style={{
+    opacity: headerInView ? 1 : 0,
+    transform: headerInView ? "translateY(0px)" : "translateY(32px)",
+    transition: "opacity 0.6s ease, transform 0.6s ease",
+  }}
+>
+  <div className="text-center max-w-4xl mx-auto">
+    <p className="uppercase tracking-[2px] text-[#C8960A] font-semibold text-xs mb-3">
+      What We Do
+    </p>
 
-        {/* Cards Grid */}
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <h2 className="text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
+      Comprehensive Logistics Services
+    </h2>
+
+    <p className="text-gray-500 text-sm leading-relaxed max-w-2xl mx-auto">
+      End-to-end solutions engineered for global trade — backed by senior
+      logistics professionals and decades of carrier relationships.
+    </p>
+  </div>
+</div>
+
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.title}
-                className="group bg-white rounded-xl border border-[#E2E8F0] p-7 flex flex-col cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#1E3A7B]/20"
+                className="group bg-white rounded-xl border border-[#E2E8F0] p-5 flex flex-col cursor-pointer hover:shadow-lg hover:-translate-y-1 hover:bg-[#1E3A7B] hover:border-[#1E3A7B]"
                 style={{
                   opacity: gridInView ? 1 : 0,
                   transform: gridInView ? "translateY(0px)" : "translateY(40px)",
-                  transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s`,
+                  transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease`,
                 }}
               >
-                <div className="w-12 h-12 bg-[#F0F4FA] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:bg-[#1E3A7B]">
-                  <Icon size={20} className="text-[#1E3A7B] transition-colors duration-300 group-hover:text-white" />
+                <div className="w-10 h-10 bg-[#F0F4FA] rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#C8960A]">
+                  <Icon size={18} className="text-[#1E3A7B] transition-colors duration-300 group-hover:text-white" />
                 </div>
-                <h3 className="text-[#1E3A7B] text-lg font-bold mb-3">
+                <h3 className="text-[#1E3A7B] text-base font-bold mb-2 transition-colors duration-300 group-hover:text-white">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1 transition-colors duration-300 group-hover:text-white/70">
                   {service.description}
                 </p>
                 <div className="flex items-center gap-1.5 text-[#C8960A] text-xs font-semibold uppercase tracking-widest transition-all duration-300 group-hover:gap-2.5">
                   Learn more
-                  <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight size={13} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </div>
               </div>
             );
           })}
 
-          {/* Featured Dark Card */}
           <div
-            className="group bg-[#1E3A7B] rounded-xl p-7 flex flex-col cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-[#162d61]"
+            className="group bg-white rounded-xl border border-[#E2E8F0] p-5 flex flex-col cursor-pointer hover:shadow-lg hover:-translate-y-1 hover:bg-[#1E3A7B] hover:border-[#1E3A7B]"
             style={{
               opacity: gridInView ? 1 : 0,
               transform: gridInView ? "translateY(0px)" : "translateY(40px)",
-              transition: "opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s",
+              transition: "opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
             }}
           >
-            <div className="w-12 h-12 bg-[#C8960A] rounded-lg flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[#b8850a]">
-              <Workflow size={20} className="text-white" />
+            <div className="w-10 h-10 bg-[#F0F4FA] rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#C8960A]">
+              <Workflow size={18} className="text-[#1E3A7B] transition-colors duration-300 group-hover:text-white" />
             </div>
-            <h3 className="text-white text-lg font-bold mb-3">
+            <h3 className="text-[#1E3A7B] text-base font-bold mb-2 transition-colors duration-300 group-hover:text-white">
               Door-to-Door Logistics
             </h3>
-            <p className="text-white/70 text-sm leading-relaxed mb-6 flex-1">
+            <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1 transition-colors duration-300 group-hover:text-white/70">
               One contract, one team — origin pickup to final delivery with full visibility across every leg.
             </p>
             <div className="flex items-center gap-1.5 text-[#C8960A] text-xs font-semibold uppercase tracking-widest transition-all duration-300 group-hover:gap-2.5">
               Learn more
-              <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight size={13} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </div>
           </div>
 

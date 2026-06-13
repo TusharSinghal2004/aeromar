@@ -82,7 +82,6 @@ export default function TechSection() {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            {/* Tracker Card */}
             <div className="bg-[#1E3A7B] rounded-2xl p-6 shadow-xl">
               <p className="text-white font-bold text-base mb-1">Live Shipment Tracker</p>
               <p className="text-white/50 text-xs mb-5">Shanghai → Los Angeles · Ocean Freight</p>
@@ -117,7 +116,6 @@ export default function TechSection() {
               </div>
             </div>
 
-            {/* Dashboard Card */}
             <div className="bg-white rounded-2xl shadow-xl p-5 mt-[-20px] ml-8 mr-[-16px] relative z-10">
               <p className="text-[#081229] font-bold text-sm mb-4">Your Dashboard</p>
               <div className="grid grid-cols-2 gap-3">
@@ -144,14 +142,13 @@ export default function TechSection() {
             }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-0.5 bg-[#C8960A]" />
-              <p className="uppercase tracking-[4px] text-[#C8960A] font-semibold text-xs">
+              <p className="uppercase tracking-[2px] text-[#C8960A] font-semibold text-xs">
                 Smart Technology
               </p>
             </div>
 
             <h2 className="text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
-              Tech That Works For You,<br />Not Against You
+              Innovative IT Solutions That Drive Business Growth
             </h2>
 
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
@@ -170,8 +167,8 @@ export default function TechSection() {
                     transition: `opacity 0.5s ease ${0.3 + i * 0.1}s, transform 0.5s ease ${0.3 + i * 0.1}s`,
                   }}
                 >
-                  <div className="w-9 h-9 bg-[#F0F4FA] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon size={16} className="text-[#1E3A7B]" />
+                  <div className="w-10 h-10 bg-[#C8960A] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon size={18} className="text-white" strokeWidth={1.8} />
                   </div>
                   <div>
                     <p className="text-[#081229] font-bold text-sm mb-1">{title}</p>

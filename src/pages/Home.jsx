@@ -17,8 +17,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <TrustBar />
-      <ServicesGrid />
       <AboutPreview />
+      <ServicesGrid />
       <SmartTechnology />
       <IndustriesWeServe />
       <GlobalCoverage />

@@ -104,8 +104,8 @@ function AnimatedGlobe() {
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-[#0d1b3e] overflow-x-hidden"
-      style={{ minHeight: "600px" }}
+      className="relative bg-[#0d1b3e] overflow-hidden"
+      style={{ minHeight: "650px" }}
     >
       {/* Background grid */}
       <div
@@ -120,7 +120,7 @@ export default function HeroSection() {
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#1E3A7B] opacity-20 blur-3xl pointer-events-none" />
 
       {/* Layout */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row items-stretch" style={{ minHeight: "520px" }}>
+      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row items-stretch">
 
         {/* LEFT — takes 55% width, flush left with page padding */}
         <div
@@ -128,22 +128,22 @@ export default function HeroSection() {
           style={{ flex: "0 0 55%", paddingLeft: "clamp(24px, 6vw, 96px)", paddingRight: "40px" }}
         >
           {/* Eyebrow */}
-          <p className="uppercase text-[#C8960A] font-semibold text-sm">
+          <p className="uppercase tracking-[2px] text-[#C8960A] font-semibold text-sm">
             Logistics · Procurement · Supply Chain
           </p>
 
           {/* Headline */}
           <div>
-            <h1 className="text-white font-bold leading-[1]" style={{ fontSize: "clamp(42px, 5vw, 65px)" }}>
+            <h1 className="text-white font-bold leading-[1]" style={{ fontSize: "clamp(42px, 5vw, 72px)" }}>
               Moving The World
             </h1>
-            <h1 className="text-[#C8960A] font-bold leading-[1] mt-1" style={{ fontSize: "clamp(42px, 5vw, 65px)" }}>
+            <h1 className="text-[#C8960A] font-bold leading-[1] mt-1" style={{ fontSize: "clamp(42px, 5vw, 72px)" }}>
               Responsibly.
             </h1>
           </div>
 
           {/* Subtext */}
-          <p className="text-white/60 leading-relaxed" style={{ fontSize: "clamp(14px, 1.1vw, 14px)", maxWidth: "480px" }}>
+          <p className="text-white/60 leading-relaxed" style={{ fontSize: "clamp(14px, 1.1vw, 18px)", maxWidth: "480px" }}>
             Aeromar combines the smartest logistics technology with something the
             big players have forgotten — a real human on your side. Global supply
             chains, made effortless.
@@ -152,11 +152,12 @@ export default function HeroSection() {
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mt-2">
             <button className="bg-[#C8960A] hover:bg-[#b8850a] text-white font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 transition-all duration-300">
-              Start Shipping
+              Request A Quote
               <ArrowRight size={16} strokeWidth={2} />
             </button>
-            <button className="bg-transparent border border-white/30 hover:bg-white/10 text-white font-semibold text-base px-7 py-3 rounded-full transition-all duration-300">
-              Our Solutions
+            <button className="bg-transparent border border-white/30 hover:bg-white/10 text-white font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 transition-all duration-300">
+              Explore Services
+              <ArrowRight size={16} strokeWidth={2} />
             </button>
           </div>
         </div>
@@ -164,9 +165,9 @@ export default function HeroSection() {
         {/* RIGHT — globe fills remaining 45%, slightly overflows top/bottom for cinematic feel */}
         <div
           className="flex items-center justify-center"
-          style={{ flex: "0 0 45%", position: "relative", overflow: "visible" }}
+          style={{ flex: "0 0 45%", position: "relative", overflow: "hidden" }}
         >
-          <div style={{ width: "100%", maxWidth: "580px", marginTop: "-20px", marginBottom: "-20px" }}>
+          <div style={{ width: "100%", maxWidth: "580px",  }}>
             <AnimatedGlobe />
           </div>
         </div>
