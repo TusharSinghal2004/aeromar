@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-const stats = [
-  { value: "30+", label: "Years Combined Experience" },
-  { value: "5", label: "Continents Served" },
-  { value: "100%", label: "FMC Licensed & Compliant" },
-];
+// const stats = [
+//   { value: "30+", label: "Years Combined Experience" },
+//   { value: "5", label: "Continents Served" },
+//   { value: "100%", label: "FMC Licensed & Compliant" },
+// ];
 
 export default function OurStory() {
   const [visible, setVisible] = useState(false);
@@ -52,7 +52,7 @@ export default function OurStory() {
             <div style={fade(0.24)} className="my-7 w-full h-[1px] bg-[#E8EDF5]" />
 
             {/* Stats */}
-            <div style={fade(0.3)} className="grid grid-cols-3 gap-4">
+            {/* <div style={fade(0.3)} className="grid grid-cols-3 gap-4">
               {stats.map(({ value, label }) => (
                 <div key={label}>
                   <p className="text-xl md:text-2xl font-extrabold text-[#C8960A] leading-none mb-1">
@@ -63,7 +63,7 @@ export default function OurStory() {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
           </div>
 
@@ -90,7 +90,7 @@ export default function OurStory() {
             </p>
 
             {/* Highlight callout */}
-            <div
+            {/* <div
               style={fade(0.38)}
               className="border-l-[3px] border-[#C8960A] pl-5 py-1 mt-2"
             >
@@ -99,7 +99,7 @@ export default function OurStory() {
                 answering your calls."
               </p>
               <p className="text-xs text-[#6B7A9B] mt-1">— Thomas Marano, Co-founder</p>
-            </div>
+            </div> */}
 
           </div>
 

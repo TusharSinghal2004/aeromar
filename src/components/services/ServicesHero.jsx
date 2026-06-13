@@ -49,7 +49,7 @@ export default function ServicesHero() {
           {/* Label */}
           <div style={fade(0.15)} className="flex items-center gap-3 mb-5">
             <div className="w-10 h-[2px] bg-[#C8960A]" />
-            <span className="uppercase tracking-[0.25em] text-[#C8960A] text-[10px] font-bold">
+            <span className="uppercase tracking-[0.25em] text-[#C8960A] text-[20px] font-extrabold">
               Our Services
             </span>
           </div>
