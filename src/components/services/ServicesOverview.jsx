@@ -70,7 +70,6 @@ export default function ServicesOverview() {
         {/* Header */}
         <div className="mb-7">
           <div style={fade(0.05)} className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-[2px] bg-[#C8960A]" />
             <span className="uppercase tracking-[0.2em] text-[#1A73C8] text-[10px] font-semibold">
               What We Do
             </span>

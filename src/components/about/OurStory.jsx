@@ -35,7 +35,6 @@ export default function OurStory() {
           <div className="lg:sticky lg:top-24">
 
             <div style={fade(0)} className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-[2px] bg-[#C8960A]" />
               <span className="uppercase tracking-[0.25em] text-[#1A73C8] text-xs font-semibold">
                 Our Story
               </span>
@@ -50,20 +49,6 @@ export default function OurStory() {
 
             {/* Divider */}
             <div style={fade(0.24)} className="my-7 w-full h-[1px] bg-[#E8EDF5]" />
-
-            {/* Stats */}
-            {/* <div style={fade(0.3)} className="grid grid-cols-3 gap-4">
-              {stats.map(({ value, label }) => (
-                <div key={label}>
-                  <p className="text-xl md:text-2xl font-extrabold text-[#C8960A] leading-none mb-1">
-                    {value}
-                  </p>
-                  <p className="text-[11px] text-[#6B7A9B] leading-[1.4] uppercase tracking-wide font-medium">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div> */}
 
           </div>
 
@@ -88,18 +73,6 @@ export default function OurStory() {
               on the outcomes our customers actually measure:
               on-time delivery, landed cost, and zero compliance surprises.
             </p>
-
-            {/* Highlight callout */}
-            {/* <div
-              style={fade(0.38)}
-              className="border-l-[3px] border-[#C8960A] pl-5 py-1 mt-2"
-            >
-              <p className="text-sm text-[#1E3A7B] font-semibold leading-6">
-                "The people negotiating your contracts are the same people
-                answering your calls."
-              </p>
-              <p className="text-xs text-[#6B7A9B] mt-1">— Thomas Marano, Co-founder</p>
-            </div> */}
 
           </div>
 
