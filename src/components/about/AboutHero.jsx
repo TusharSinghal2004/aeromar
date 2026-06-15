@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
 
 // Using a placeholder since we can't import local assets in preview
 const heroImage = "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80";
@@ -13,7 +12,7 @@ export default function AboutHero() {
   }, []);
 
   return (
-    <section className="relative min-h-[65vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
 
       {/* Background Image */}
       <img
@@ -42,8 +41,7 @@ export default function AboutHero() {
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
-            <div className="w-12 h-[2px] bg-[#C8960A]" />
-            <span className="uppercase tracking-[0.22em] text-[#C8960A] text-xs font-semibold">
+            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-s font-bold">
               About Aeromar
             </span>
           </div>
@@ -89,14 +87,9 @@ export default function AboutHero() {
               transition: "opacity 0.8s ease 0.68s, transform 0.8s ease 0.68s",
             }}
           >
-            <button className="bg-[#C8960A] text-white font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition">
-              Request A Quote
-              <ArrowRight size={16} />
-            </button>
+           
 
-            <button className="border border-white/30 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/10 transition">
-              Our Services
-            </button>
+            
           </div>
 
         </div>

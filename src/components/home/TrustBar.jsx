@@ -86,7 +86,7 @@ export default function StatsStrip() {
 >
   <div className="flex flex-col items-center">
     <h2 className="text-[#1E3A7B] text-4xl md:text-5xl font-extrabold leading-tight whitespace-nowrap">
-      150+
+      <AnimatedCounter target={150} />+
     </h2>
     <p className="text-gray-500 text-sm mt-1">Countries Served</p>
   </div>

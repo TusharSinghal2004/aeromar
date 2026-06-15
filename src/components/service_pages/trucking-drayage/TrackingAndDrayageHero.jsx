@@ -52,7 +52,7 @@ export default function OceanFreightHero() {
             <span className="text-white/40">/</span>
             <span className="text-white/70">Services</span>
             <span className="text-white/40">/</span>
-            <span className="text-[#C8960A]">Ocean Freight</span>
+            <span className="text-[#C8960A]">Tracking & Drayage</span>
           </div>
 
           {/* Label */}
@@ -65,7 +65,7 @@ export default function OceanFreightHero() {
             style={anim(0.38)}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-none"
           >
-            Ocean Freight
+            Trucking & Drayage
           </h1>
 
           {/* Subtitle */}
@@ -73,7 +73,7 @@ export default function OceanFreightHero() {
             style={anim(0.52)}
             className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed max-w-xl"
           >
-            FCL, LCL & project cargo via our global carrier network.
+            Port drayage, QTR and final-mile across North America.
           </p>
 
         </div>

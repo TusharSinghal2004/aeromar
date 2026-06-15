@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CTASection() {
   const [email, setEmail] = useState("");
@@ -34,9 +35,12 @@ export default function CTASection() {
             placeholder="Enter your work email"
             className="flex-1 bg-transparent px-5 py-4 text-white placeholder-white/40 text-sm outline-none"
           />
-          <button className="bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-white font-bold text-sm px-6 py-4 whitespace-nowrap">
-            Get a Quote
-          </button>
+          <Link
+  to="/quote"
+  className="bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-white font-bold text-sm px-6 py-4 whitespace-nowrap flex items-center"
+>
+  Get a Quote
+</Link>
         </div>
 
         {/* Secondary CTA */}

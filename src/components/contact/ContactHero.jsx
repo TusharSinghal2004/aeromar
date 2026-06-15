@@ -57,9 +57,8 @@ export default function ContactHero() {
 
           {/* Label */}
           <div style={fade(0.15)} className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-[2px] bg-[#C8960A]" />
-            <span className="uppercase tracking-[0.28em] text-[#C8960A] text-[10px] font-bold">
-              Contact
+            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-s font-bold">
+              Contact US
             </span>
           </div>
 
@@ -129,7 +128,6 @@ function ContactCard({ Icon, label, value, sub, delay, visible }) {
         transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`,
         background: hovered ? "rgba(200,150,10,0.12)" : "rgba(255,255,255,0.05)",
         borderColor: hovered ? "#C8960A" : "rgba(255,255,255,0.1)",
-        transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s, background 0.25s ease, border-color 0.25s ease`,
       }}
       className="border p-4 flex flex-col gap-2 cursor-default"
     >

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const services = [
   { title: "Ocean Freight", link: "/ocean-freight" },
+  { title: "Air Freight", link: "/air-freight" },
   { title: "Customs Brokerage", link: "/customs-brokerage" },
   { title: "Warehousing", link: "/warehousing" },
   { title: "Trucking & Drayage", link: "/trucking-drayage" },
-  { title: "Door-to-Door Logistics", link: "/door-to-door" },
 ];
 
 export default function ExploreMoreSection() {
@@ -43,7 +43,6 @@ export default function ExploreMoreSection() {
 
         {/* Heading */}
         <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-[2px] bg-[#C8960A]" />
           <span className="uppercase tracking-[0.22em] text-[#C8960A] text-[11px] font-semibold">
             Explore More
           </span>

@@ -1,20 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  ShoppingCart,
-  Store,
-  Package,
   Sofa,
-  Warehouse,
+  Store,
+  Factory,
+  ShoppingCart,
+  Package,
 } from "lucide-react";
 
 const industries = [
-  { icon: ShoppingCart, title: "eCommerce" },
-  { icon: Store, title: "Retail" },
-  { icon: Package, title: "Wholesale" },
   { icon: Sofa, title: "Furniture" },
-  { icon: Warehouse, title: "Distribution" },
+  { icon: Store, title: "Retail" },
+  { icon: Factory, title: "Manufacturing" },
+  { icon: ShoppingCart, title: "eCommerce" },
+  { icon: Package, title: "Wholesale Distribution" },
 ];
-
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -55,7 +54,7 @@ export default function IndustriesServed() {
           style={fadeUp(0.15)}
           className="text-3xl md:text-4xl font-extrabold text-[#1E3A7B] mb-8"
         >
-          Verticals where air freight excels.
+          Verticals where trucking & drayage excels.
         </h2>
 
         {/* Industries */}

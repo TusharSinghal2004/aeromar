@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
-
+  
 const heroImage =
   "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80";
 
@@ -48,8 +47,7 @@ export default function ServicesHero() {
         <div className="max-w-3xl">
           {/* Label */}
           <div style={fade(0.15)} className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-[2px] bg-[#C8960A]" />
-            <span className="uppercase tracking-[0.25em] text-[#C8960A] text-[20px] font-extrabold">
+            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-s font-bold">
               Our Services
             </span>
           </div>
@@ -112,21 +110,7 @@ export default function ServicesHero() {
             style={fade(0.56)}
             className="mt-7 flex flex-col sm:flex-row gap-3"
           >
-            <button className="group bg-[#C8960A] text-white font-bold text-xs tracking-widest px-7 py-3 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-all hover:-translate-y-0.5">
-              REQUEST A QUOTE
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </button>
-
-            <button className="group border border-white/25 text-white font-bold text-xs tracking-widest px-7 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/40 transition-all hover:-translate-y-0.5">
-              CONTACT TEAM
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </button>
+            
           </div>
         </div>
       </div>

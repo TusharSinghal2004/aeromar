@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import aboutImage from "../../assets/images/about-logistics.png";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -113,10 +114,16 @@ export default function AboutPreview() {
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="group bg-[#1E3A7B] hover:bg-[#162d61] text-white px-7 py-3 text-sm font-semibold transition-all duration-300 flex items-center gap-2">
-                Explore Our Services
-                <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </button>
+              <Link
+  to="/services"
+  className="group bg-[#1E3A7B] hover:bg-[#162d61] text-white px-7 py-3 text-sm font-semibold transition-all duration-300 inline-flex items-center gap-2"
+>
+  Explore Our Services
+  <ArrowUpRight
+    size={15}
+    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+  />
+</Link>
               {/* <button className="text-[#1E3A7B] text-sm font-semibold underline underline-offset-4 hover:text-[#C8960A] transition-colors duration-300">
                 Meet the team 
               </button> */}

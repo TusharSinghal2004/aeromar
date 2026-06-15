@@ -1,11 +1,10 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-
 import CustomsBrokerageHero from "../components/service_pages/customs-brokerage/CustomsBrokerageHero";
-import OceanFreightOverview from "../components/service_pages/ocean-fright/OceanFreightOverview";
-import IndustriesServed from "../components/service_pages/ocean-fright/IndustriesServed";
-import OceanFreightProcess from "../components/service_pages/ocean-fright/OceanFreightProcess"
-import ExploreMoreSection from "../components/service_pages/ocean-fright/ExploreMoreSection"
+import CustomsBrokerageOverview from "../components/service_pages/customs-brokerage/CustomsBrokerageOverview";
+import IndustriesServed from "../components/service_pages/customs-brokerage/IndustriesServed";
+import CustomsBrokerageProcess from "../components/service_pages/customs-brokerage/CustomsBrokerageProcess"
+import ExploreMoreSection from "../components/service_pages/customs-brokerage/ExploreMoreSection"
 
     
 export default function OceanFreight() {
@@ -13,9 +12,9 @@ export default function OceanFreight() {
     <>
       <Navbar />
       <CustomsBrokerageHero />
-      <OceanFreightOverview />
+      <CustomsBrokerageOverview />
       <IndustriesServed />
-      <OceanFreightProcess />
+      <CustomsBrokerageProcess />
       <ExploreMoreSection />
       <Footer />
     </>

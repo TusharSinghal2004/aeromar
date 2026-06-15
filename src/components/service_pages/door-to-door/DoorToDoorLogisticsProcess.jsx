@@ -56,13 +56,6 @@ export default function OceanFreightProcess() {
 
             {/* Label */}
             <div style={fadeUp(leftInView, 0.05)} className="flex items-center gap-3 mb-3">
-              <div
-                style={{
-                  width: leftInView ? "2.5rem" : "0rem",
-                  transition: "width 0.5s ease 0.1s",
-                }}
-                className="h-[2px] bg-[#C8960A]"
-              />
               <span className="uppercase tracking-[0.2em] text-[#1A73C8] text-[11px] font-semibold">
                 How We Run It
               </span>
@@ -106,13 +99,7 @@ export default function OceanFreightProcess() {
 
             {/* Label */}
             <div style={fadeUp(rightInView, 0.05)} className="flex items-center gap-3 mb-3">
-              <div
-                style={{
-                  width: rightInView ? "2.5rem" : "0rem",
-                  transition: "width 0.5s ease 0.1s",
-                }}
-                className="h-[2px] bg-[#C8960A]"
-              />
+              
               <span className="uppercase tracking-[0.2em] text-[#1A73C8] text-[11px] font-semibold">
                 FAQ
               </span>

@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const services = [
-  { title: "Ocean Freight", link: "/ocean-freight" },
+    { title: "Ocean Freight", link: "/ocean-freight" },
+  { title: "Air Freight", link: "/air-freight" },
   { title: "Customs Brokerage", link: "/customs-brokerage" },
   { title: "Warehousing", link: "/warehousing" },
-  { title: "Trucking & Drayage", link: "/trucking-drayage" },
   { title: "Door-to-Door Logistics", link: "/door-to-door" },
 ];
 

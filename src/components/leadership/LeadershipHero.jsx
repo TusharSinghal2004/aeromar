@@ -49,9 +49,8 @@ export default function LeadershipHero() {
 
           {/* Label */}
           <div style={fade(0.15)} className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-[2px] bg-[#C8960A]" />
-            <span className="uppercase tracking-[0.28em] text-[#C8960A] text-[10px] font-bold">
-              Leadership
+            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-s font-bold">
+              Our Leadership
             </span>
           </div>
 

@@ -147,11 +147,9 @@ export default function LeadershipSection() {
           }}
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-6 h-0.5 bg-[#C8960A]" />
-            <p className="uppercase tracking-[4px] text-[#C8960A] font-semibold text-xs">
+            <p className="uppercase tracking-[2px] text-[#C8960A] font-semibold text-xs">
               Leadership
             </p>
-            <div className="w-6 h-0.5 bg-[#C8960A]" />
           </div>
           <h2 className="text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
             Led By Industry Veterans
@@ -172,8 +170,8 @@ export default function LeadershipSection() {
               inView={gridInView}
             />
           ))}
-        </div>
 
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function AnimatedGlobe() {
   return (
@@ -102,6 +104,13 @@ function AnimatedGlobe() {
 }
 
 export default function HeroSection() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 80);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section
       className="relative bg-[#0d1b3e] overflow-hidden"
@@ -127,38 +136,86 @@ export default function HeroSection() {
           className="flex flex-col justify-center gap-5 py-16"
           style={{ flex: "0 0 55%", paddingLeft: "clamp(24px, 6vw, 96px)", paddingRight: "40px" }}
         >
-          {/* Eyebrow */}
-          <p className="uppercase tracking-[2px] text-[#C8960A] font-semibold text-sm">
-            Logistics · Procurement · Supply Chain
-          </p>
+          {/* Eyebrow with growing line */}
+          <div
+            className="flex items-center gap-3"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0px)" : "translateY(16px)",
+              transition: "opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s",
+            }}
+          >
+            
+            <p className="uppercase tracking-[2px] text-[#C8960A] font-semibold text-sm">
+              Logistics · Procurement · Supply Chain
+            </p>
+          </div>
 
-          {/* Headline */}
+          {/* Headline — staggered lines */}
           <div>
-            <h1 className="text-white font-bold leading-[1]" style={{ fontSize: "clamp(42px, 5vw, 72px)" }}>
+            <h1
+              className="text-white font-bold leading-[1]"
+              style={{
+                fontSize: "clamp(42px, 5vw, 72px )",
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0px)" : "translateY(36px)",
+                transition: "opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s",
+              }}
+            >
               Moving The World
             </h1>
-            <h1 className="text-[#C8960A] font-bold leading-[1] mt-1" style={{ fontSize: "clamp(42px, 5vw, 72px)" }}>
+            <h1
+              className="text-[#C8960A] font-bold leading-[1] mt-1"
+              style={{
+                fontSize: "clamp(42px, 5vw, 72px)",
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0px)" : "translateY(36px)",
+                transition: "opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s",
+              }}
+            >
               Responsibly.
             </h1>
           </div>
 
           {/* Subtext */}
-          <p className="text-white/60 leading-relaxed" style={{ fontSize: "clamp(14px, 1.1vw, 18px)", maxWidth: "480px" }}>
+          <p
+            className="text-white/60 leading-relaxed"
+            style={{
+              fontSize: "clamp(14px, 1.1vw, 18px)",
+              maxWidth: "480px",
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0px)" : "translateY(20px)",
+              transition: "opacity 0.7s ease 0.55s, transform 0.7s ease 0.55s",
+            }}
+          >
             Aeromar combines the smartest logistics technology with something the
             big players have forgotten — a real human on your side. Global supply
             chains, made effortless.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4 mt-2">
-            <button className="bg-[#C8960A] hover:bg-[#b8850a] text-white font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 transition-all duration-300">
+          <div
+            className="flex flex-wrap gap-4 mt-2"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0px)" : "translateY(20px)",
+              transition: "opacity 0.7s ease 0.7s, transform 0.7s ease 0.7s",
+            }}
+          >
+            <Link
+              to="/quote"
+              className="group bg-[#C8960A] hover:bg-[#b8850a] text-white font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#C8960A]/30 hover:-translate-y-0.5"
+            >
               Request A Quote
-              <ArrowRight size={16} strokeWidth={2} />
-            </button>
-            <button className="bg-transparent border border-white/30 hover:bg-white/10 text-white font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 transition-all duration-300">
+              <ArrowRight size={16} strokeWidth={2} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <Link
+              to="/services"
+              className="group bg-transparent border border-white/30 hover:bg-white/10 text-white font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5"
+            >
               Explore Services
-              <ArrowRight size={16} strokeWidth={2} />
-            </button>
+              <ArrowRight size={16} strokeWidth={2} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
 
@@ -167,7 +224,7 @@ export default function HeroSection() {
           className="flex items-center justify-center"
           style={{ flex: "0 0 45%", position: "relative", overflow: "hidden" }}
         >
-          <div style={{ width: "100%", maxWidth: "580px",  }}>
+          <div style={{ width: "100%", maxWidth: "580px" }}>
             <AnimatedGlobe />
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  Ship, Plane, BadgeDollarSign, Warehouse, Truck, Route, ArrowUpRight,
+  Ship, Plane, FileBadge, Warehouse, Truck, Workflow, ArrowUpRight,
 } from "lucide-react";
 
 const services = [
@@ -9,37 +9,37 @@ const services = [
     icon: Ship,
     title: "Ocean Freight",
     description: "FCL, LCL, NVOCC programs, carrier contracts, and global trade lane management.",
-    link: "/services/ocean-freight",
+    link: "/ocean-freight",
   },
   {
     icon: Plane,
     title: "Air Freight",
     description: "Priority air cargo, expedited shipping, charter solutions, and time-critical freight.",
-    link: "/services/air-freight",
+    link: "/air-freight",
   },
   {
-    icon: BadgeDollarSign,
+    icon: FileBadge,
     title: "Customs Brokerage",
     description: "Import clearance, compliance management, classifications, duties, and documentation.",
-    link: "/services/customs-brokerage",
+    link: "/customs-brokerage",
   },
   {
     icon: Warehouse,
     title: "Warehousing",
     description: "Storage, bonded facilities, inventory control, fulfillment, and distribution.",
-    link: "/services/warehousing",
+    link: "/warehousing",
   },
   {
     icon: Truck,
     title: "Trucking & Drayage",
     description: "Port drayage, intermodal transportation, inland trucking, and final-mile delivery.",
-    link: "/services/trucking-drayage",
+    link: "/tracking-and-drayage",
   },
   {
-    icon: Route,
+    icon: Workflow,
     title: "Door-to-Door Logistics",
     description: "Complete logistics management from supplier pickup through final delivery.",
-    link: "/services/door-to-door",
+    link: "/door-to-door",
   },
 ];
 
