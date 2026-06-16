@@ -72,19 +72,20 @@ export default function YourComponentName() {
   return (
     <section className="bg-[#F8F9FB] py-10 lg:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
 
           {/* LEFT — UI Mockup */}
           <div
             ref={leftRef}
-            className="relative"
+            className="relative w-full min-w-0"
             style={{
               opacity: leftInView ? 1 : 0,
               transform: leftInView ? "translateY(0px)" : "translateY(48px)",
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            <div className="bg-[#1E3A7B] rounded-2xl p-4 sm:p-6 shadow-xl">
+            {/* Tracker card */}
+            <div className="bg-[#1E3A7B] rounded-2xl p-4 sm:p-6 shadow-xl w-full">
               <p className="text-white font-bold text-sm sm:text-base mb-1">Live Shipment Tracker</p>
               <p className="text-white/50 text-xs mb-5">Shanghai → Los Angeles · Ocean Freight</p>
 
@@ -107,7 +108,8 @@ export default function YourComponentName() {
                 <p className="text-white/60 text-xs">ETA: June 3</p>
               </div>
 
-              <div className="flex items-center gap-0.5 overflow-x-auto pb-1 scrollbar-none">
+              {/* Steps — scrollable on very small screens */}
+              <div className="flex items-center gap-0.5 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
                 {steps.map((step, i) => (
                   <div key={step} className="flex items-center gap-0.5 flex-shrink-0">
                     <div className={`w-2 h-2 rounded-full flex-shrink-0 ${i <= 2 ? "bg-[#C8960A]" : "bg-white/20"}`} />
@@ -118,16 +120,17 @@ export default function YourComponentName() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-5 mt-4 sm:mt-[-20px] sm:ml-8 sm:mr-[-16px] relative z-10">
+            {/* Dashboard card — stacked on mobile, overlapping on sm+ */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-5 mt-3 sm:mt-[-20px] sm:ml-8 sm:mr-[-16px] relative z-10 w-full min-w-0">
               <p className="text-[#081229] font-bold text-sm mb-4">Your Dashboard</p>
               <div className="grid grid-cols-2 gap-3">
                 {dashboardStats.map(({ icon: Icon, value, label }) => (
-                  <div key={label} className="bg-[#F8F9FB] rounded-xl p-3 sm:p-3.5 flex flex-col gap-2">
-                    <div className="w-7 h-7 bg-[#E8EEF8] rounded-lg flex items-center justify-center">
+                  <div key={label} className="bg-[#F8F9FB] rounded-xl p-3 flex flex-col gap-2 min-w-0">
+                    <div className="w-7 h-7 bg-[#E8EEF8] rounded-lg flex items-center justify-center flex-shrink-0">
                       <Icon size={14} className="text-[#1E3A7B]" />
                     </div>
-                    <p className="text-[#081229] text-lg sm:text-xl font-extrabold leading-none">{value}</p>
-                    <p className="text-gray-400 text-xs">{label}</p>
+                    <p className="text-[#081229] text-lg font-extrabold leading-none truncate">{value}</p>
+                    <p className="text-gray-400 text-xs leading-tight">{label}</p>
                   </div>
                 ))}
               </div>
@@ -137,6 +140,7 @@ export default function YourComponentName() {
           {/* RIGHT — Text Content */}
           <div
             ref={rightRef}
+            className="w-full min-w-0"
             style={{
               opacity: rightInView ? 1 : 0,
               transform: rightInView ? "translateY(0px)" : "translateY(48px)",
@@ -158,7 +162,7 @@ export default function YourComponentName() {
               understand — clear, actionable, always live.
             </p>
 
-            <div className="space-y-5 sm:space-y-6">
+            <div className="space-y-5">
               {features.map(({ icon: Icon, title, description }, i) => (
                 <div
                   key={title}
@@ -169,10 +173,10 @@ export default function YourComponentName() {
                     transition: `opacity 0.5s ease ${0.3 + i * 0.1}s, transform 0.5s ease ${0.3 + i * 0.1}s`,
                   }}
                 >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#C8960A] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-9 h-9 bg-[#C8960A] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon size={16} className="text-white" strokeWidth={1.8} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[#081229] font-bold text-sm mb-1">{title}</p>
                     <p className="text-gray-500 text-xs leading-relaxed">{description}</p>
                   </div>
