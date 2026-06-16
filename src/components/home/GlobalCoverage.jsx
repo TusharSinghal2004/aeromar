@@ -85,14 +85,6 @@ export default function GlobalCoverageSection() {
             }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div
-                className="h-0.5 bg-[#C8960A]"
-                style={{
-                  width: `${lineProgress * 0.4}px`,
-                  maxWidth: "40px",
-                  transition: "width 0.05s linear",
-                }}
-              />
               <p className="uppercase tracking-[4px] text-[#C8960A] font-semibold text-xs">
                 Global Coverage
               </p>

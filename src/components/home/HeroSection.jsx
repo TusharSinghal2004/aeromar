@@ -189,7 +189,7 @@ export default function HeroSection() {
             }}
           >
             Aeromar combines the smartest logistics technology with something the
-            big players have forgotten — a real human on your side. Global supply
+            big players have forgotten a real human on your side. Global supply
             chains, made effortless.
           </p>
 

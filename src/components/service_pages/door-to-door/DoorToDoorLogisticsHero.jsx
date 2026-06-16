@@ -73,7 +73,7 @@ export default function OceanFreightHero() {
             style={anim(0.52)}
             className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed max-w-xl"
           >
-            One contract, One team - origin pickup to final delivery
+            One contract, One team, origin pickup to final delivery
           </p>
 
         </div>

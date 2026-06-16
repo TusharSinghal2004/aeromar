@@ -77,7 +77,7 @@ export default function BlogHero() {
           {/* Description */}
           <p style={fade(0.38)} className="text-sm md:text-base text-white/70 leading-7 max-w-lg mb-8">
             Trade corridors, compliance updates, market commentary, and shipping
-            guides — written by the people running the lanes.
+            guides written by the people running the lanes.
           </p>
 
           {/* Stats */}

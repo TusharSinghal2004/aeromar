@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import leader1 from "../../assets/images/leader1new.jpeg";
 import leader2 from "../../assets/images/leader2new.jpeg";
-
+  
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);

@@ -80,7 +80,7 @@ export default function ServicesHero() {
             className="mt-5 max-w-xl text-sm md:text-base text-white/75 leading-7"
           >
             From ocean and air freight to customs brokerage, warehousing,
-            drayage, and door-to-door programs — Aeromar engineers the full
+            drayage, and door-to-door programs Aeromar engineers the full
             move.
           </p>
 
