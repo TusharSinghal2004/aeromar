@@ -5,7 +5,7 @@ const heroImage = "https://images.unsplash.com/photo-1521791136064-7986c2920216?
 
 const contacts = [
   { icon: Phone, label: "Call Us",      value: "+1 (732) 555-1234",       sub: "Mon–Fri, 8am–6pm EST" },
-  { icon: Mail,  label: "Email",         value: "hello@aeromarglobal.com", sub: "We reply within 4 hours" },
+  { icon: Mail,  label: "Email",         value: "info@aeromarglobal.com", sub: "We reply within 4 hours" },
   { icon: Clock, label: "Response Time", value: "Under 4 Hours",           sub: "Business hours guaranteed" },
 ];
 
