@@ -48,7 +48,9 @@ const dashboardStats = [
   { icon: CheckCircle, value: "99.1%",  label: "Accuracy Rate" },
 ];
 
-export default function TechSection() {
+const steps = ["PO Ready", "Departed", "In Transit", "Arriving", "Delivered"];
+
+export default function YourComponentName() {
   const [leftRef, leftInView] = useInView(0.1);
   const [rightRef, rightInView] = useInView(0.1);
 
@@ -69,8 +71,8 @@ export default function TechSection() {
 
   return (
     <section className="bg-[#F8F9FB] py-10 lg:py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
           {/* LEFT — UI Mockup */}
           <div
@@ -82,8 +84,8 @@ export default function TechSection() {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            <div className="bg-[#1E3A7B] rounded-2xl p-6 shadow-xl">
-              <p className="text-white font-bold text-base mb-1">Live Shipment Tracker</p>
+            <div className="bg-[#1E3A7B] rounded-2xl p-4 sm:p-6 shadow-xl">
+              <p className="text-white font-bold text-sm sm:text-base mb-1">Live Shipment Tracker</p>
               <p className="text-white/50 text-xs mb-5">Shanghai → Los Angeles · Ocean Freight</p>
 
               <div className="relative h-1.5 bg-white/10 rounded-full mb-3">
@@ -105,26 +107,26 @@ export default function TechSection() {
                 <p className="text-white/60 text-xs">ETA: June 3</p>
               </div>
 
-              <div className="flex items-center gap-1">
-                {["PO Ready", "Departed", "In Transit", "Arriving", "Delivered"].map((step, i) => (
-                  <div key={step} className="flex items-center gap-1">
+              <div className="flex items-center gap-0.5 overflow-x-auto pb-1 scrollbar-none">
+                {steps.map((step, i) => (
+                  <div key={step} className="flex items-center gap-0.5 flex-shrink-0">
                     <div className={`w-2 h-2 rounded-full flex-shrink-0 ${i <= 2 ? "bg-[#C8960A]" : "bg-white/20"}`} />
-                    <span className={`text-[10px] ${i <= 2 ? "text-white/80" : "text-white/30"}`}>{step}</span>
-                    {i < 4 && <div className="w-3 h-px bg-white/10 flex-shrink-0" />}
+                    <span className={`text-[10px] whitespace-nowrap ${i <= 2 ? "text-white/80" : "text-white/30"}`}>{step}</span>
+                    {i < steps.length - 1 && <div className="w-2 sm:w-3 h-px bg-white/10 flex-shrink-0 mx-0.5" />}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-5 mt-[-20px] ml-8 mr-[-16px] relative z-10">
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-5 mt-4 sm:mt-[-20px] sm:ml-8 sm:mr-[-16px] relative z-10">
               <p className="text-[#081229] font-bold text-sm mb-4">Your Dashboard</p>
               <div className="grid grid-cols-2 gap-3">
                 {dashboardStats.map(({ icon: Icon, value, label }) => (
-                  <div key={label} className="bg-[#F8F9FB] rounded-xl p-3.5 flex flex-col gap-2">
+                  <div key={label} className="bg-[#F8F9FB] rounded-xl p-3 sm:p-3.5 flex flex-col gap-2">
                     <div className="w-7 h-7 bg-[#E8EEF8] rounded-lg flex items-center justify-center">
                       <Icon size={14} className="text-[#1E3A7B]" />
                     </div>
-                    <p className="text-[#081229] text-xl font-extrabold leading-none">{value}</p>
+                    <p className="text-[#081229] text-lg sm:text-xl font-extrabold leading-none">{value}</p>
                     <p className="text-gray-400 text-xs">{label}</p>
                   </div>
                 ))}
@@ -147,7 +149,7 @@ export default function TechSection() {
               </p>
             </div>
 
-            <h2 className="text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
               Innovative IT Solutions That Drive Business Growth
             </h2>
 
@@ -156,19 +158,19 @@ export default function TechSection() {
               understand — clear, actionable, always live.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6">
               {features.map(({ icon: Icon, title, description }, i) => (
                 <div
                   key={title}
-                  className="flex gap-4"
+                  className="flex gap-3 sm:gap-4"
                   style={{
                     opacity: rightInView ? 1 : 0,
                     transform: rightInView ? "translateY(0px)" : "translateY(24px)",
                     transition: `opacity 0.5s ease ${0.3 + i * 0.1}s, transform 0.5s ease ${0.3 + i * 0.1}s`,
                   }}
                 >
-                  <div className="w-10 h-10 bg-[#C8960A] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon size={18} className="text-white" strokeWidth={1.8} />
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#C8960A] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon size={16} className="text-white" strokeWidth={1.8} />
                   </div>
                   <div>
                     <p className="text-[#081229] font-bold text-sm mb-1">{title}</p>

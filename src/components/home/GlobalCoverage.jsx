@@ -72,7 +72,7 @@ export default function GlobalCoverageSection() {
 
   return (
     <section className="bg-[#081229] py-14 lg:py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid lg:grid-cols-[420px_1fr] gap-12 lg:gap-20 items-center">
 
           {/* LEFT */}
@@ -84,7 +84,6 @@ export default function GlobalCoverageSection() {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6">
               <div
                 className="h-0.5 bg-[#C8960A]"
@@ -99,7 +98,6 @@ export default function GlobalCoverageSection() {
               </p>
             </div>
 
-            {/* Headline */}
             <h2 className="text-4xl lg:text-6xl font-extrabold text-white leading-[1.05] mb-6">
               Five trade<br />lanes.{" "}
               <span className="text-[#C8960A]">One<br />operations<br />team.</span>
@@ -110,13 +108,11 @@ export default function GlobalCoverageSection() {
               — and contracted carrier capacity to move your cargo on schedule.
             </p>
 
-            {/* Animated route line */}
             <div className="relative h-px bg-white/10 w-full mb-2 overflow-hidden">
               <div
                 className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#C8960A] to-[#1A73C8]"
                 style={{ width: `${lineProgress}%`, transition: "width 0.05s linear" }}
               />
-              {/* Moving dot */}
               <div
                 className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white shadow-md"
                 style={{ left: `calc(${lineProgress}% - 4px)`, transition: "left 0.05s linear" }}
@@ -137,87 +133,92 @@ export default function GlobalCoverageSection() {
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
-            {regions.map(({ label, ports, stat, statLabel, color }, i) => (
-              <div
-                key={label}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                className={`relative rounded-2xl border p-5 cursor-pointer overflow-hidden ${
-                  i === 4 ? "col-span-2" : ""
-                }`}
-                style={{
-                  background: hovered === i ? "#0E1E3D" : "#0a1628",
-                  borderColor: hovered === i ? color : "rgba(30,58,123,0.3)",
-                  opacity: rightInView ? 1 : 0,
-                  transform: rightInView
-                    ? hovered === i ? "translateY(-4px)" : "translateY(0px)"
-                    : "translateY(32px)",
-                  transition: `opacity 0.5s ease ${0.2 + i * 0.08}s, transform 0.35s ease, background 0.3s ease, border-color 0.3s ease`,
-                  boxShadow: hovered === i ? `0 12px 32px -8px ${color}30` : "none",
-                }}
-              >
-                {/* Animated top border */}
+            {regions.map(({ label, ports, stat, statLabel, color }, i) => {
+              const isActive = hovered === i;
+              return (
                 <div
-                  className="absolute top-0 left-0 h-[2px] rounded-t-2xl"
+                  key={label}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
+                  onTouchStart={() => setHovered(i)}
+                  onTouchEnd={() => setHovered(null)}
+                  className={`relative rounded-2xl border p-4 sm:p-5 cursor-pointer overflow-hidden ${
+                    i === 4 ? "col-span-2" : ""
+                  }`}
                   style={{
-                    background: color,
-                    width: hovered === i ? "100%" : "0%",
-                    transition: "width 0.4s ease",
+                    background: isActive ? "#0E1E3D" : "#0a1628",
+                    borderColor: isActive ? color : "rgba(30,58,123,0.3)",
+                    opacity: rightInView ? 1 : 0,
+                    transform: rightInView
+                      ? isActive ? "translateY(-4px)" : "translateY(0px)"
+                      : "translateY(32px)",
+                    transition: `opacity 0.5s ease ${0.2 + i * 0.08}s, transform 0.35s ease, background 0.3s ease, border-color 0.3s ease`,
+                    boxShadow: isActive ? `0 12px 32px -8px ${color}30` : "none",
                   }}
-                />
-
-                {/* Glowing circle bg on hover */}
-                <div
-                  className="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl pointer-events-none"
-                  style={{
-                    background: color,
-                    opacity: hovered === i ? 0.12 : 0,
-                    transition: "opacity 0.4s ease",
-                  }}
-                />
-
-                <p
-                  className="uppercase tracking-[3px] text-[10px] font-bold mb-2"
-                  style={{ color }}
                 >
-                  Region
-                </p>
+                  {/* Animated top border */}
+                  <div
+                    className="absolute top-0 left-0 h-[2px] rounded-t-2xl"
+                    style={{
+                      background: color,
+                      width: isActive ? "100%" : "0%",
+                      transition: "width 0.4s ease",
+                    }}
+                  />
 
-                <div className="flex items-end justify-between gap-4">
-                  <div>
-                    <h3 className="text-white font-extrabold text-lg leading-tight mb-1">
-                      {label}
-                    </h3>
-                    <p className="text-gray-500 text-xs leading-relaxed">{ports}</p>
+                  {/* Glow */}
+                  <div
+                    className="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl pointer-events-none"
+                    style={{
+                      background: color,
+                      opacity: isActive ? 0.12 : 0,
+                      transition: "opacity 0.4s ease",
+                    }}
+                  />
+
+                  <p
+                    className="uppercase tracking-[3px] text-[10px] font-bold mb-2"
+                    style={{ color }}
+                  >
+                    Region
+                  </p>
+
+                  {/* Key fix: stat is always in the layout (no layout shift), just fades */}
+                  <div className="flex items-end justify-between gap-2">
+                    <div className="min-w-0">
+                      <h3 className="text-white font-extrabold text-base sm:text-lg leading-tight mb-1">
+                        {label}
+                      </h3>
+                      <p className="text-gray-500 text-xs leading-relaxed">{ports}</p>
+                    </div>
+
+                    <div
+                      className="flex-shrink-0 text-right"
+                      style={{
+                        opacity: isActive ? 1 : 0,
+                        transition: "opacity 0.3s ease",
+                        // Always occupies space — no transform shift
+                        minWidth: "48px",
+                      }}
+                    >
+                      <p className="font-extrabold text-lg sm:text-xl" style={{ color }}>{stat}</p>
+                      <p className="text-gray-500 text-[10px]">{statLabel}</p>
+                    </div>
                   </div>
 
-                  {/* Stat — slides in on hover */}
+                  {/* Arrow */}
                   <div
-                    className="flex-shrink-0 text-right"
+                    className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4"
                     style={{
-                      opacity: hovered === i ? 1 : 0,
-                      transform: hovered === i ? "translateX(0px)" : "translateX(12px)",
-                      transition: "opacity 0.3s ease, transform 0.3s ease",
+                      opacity: isActive ? 1 : 0,
+                      transition: "opacity 0.3s ease",
                     }}
                   >
-                    <p className="font-extrabold text-xl" style={{ color }}>{stat}</p>
-                    <p className="text-gray-500 text-[10px]">{statLabel}</p>
+                    <ArrowUpRight size={14} style={{ color }} />
                   </div>
                 </div>
-
-                {/* Arrow */}
-                <div
-                  className="absolute bottom-4 right-4"
-                  style={{
-                    opacity: hovered === i ? 1 : 0,
-                    transform: hovered === i ? "translate(0,0)" : "translate(4px,-4px)",
-                    transition: "opacity 0.3s ease, transform 0.3s ease",
-                  }}
-                >
-                  <ArrowUpRight size={14} style={{ color }} />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>

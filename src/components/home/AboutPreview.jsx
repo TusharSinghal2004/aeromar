@@ -22,17 +22,17 @@ export default function AboutPreview() {
   const [rightRef, rightInView] = useInView(0.1);
 
   return (
-    <section className="bg-white pt-2 lg:pt 0 pb-16 lg:pb-24">
-  <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section className="bg-white pt-2 lg:pt-0 pb-16 lg:pb-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-    <div className="border-t border-gray-200 mb-14" />
+        <div className="border-t border-gray-200 mb-14" />
 
-    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT IMAGE */}
           <div
             ref={leftRef}
-            className="relative"
+            className="relative pt-10 lg:pt-8"
             style={{
               opacity: leftInView ? 1 : 0,
               transform: leftInView ? "translateY(0px)" : "translateY(48px)",
@@ -40,14 +40,16 @@ export default function AboutPreview() {
             }}
           >
 
-            {/* FMC Badge */}
-<div className="absolute -top-8 -left-10 z-20 px-5 py-3 rounded-2xl shadow-lg border border-[#C9A73A]/30 bg-gradient-to-br from-[#F4D96A] via-[#D7B03F] via-50% to-[#A97B18]">  <p className="text-[10px] uppercase tracking-[3px] text-[#1E3A7B] font-semibold">
-    FMC License
-  </p>
-  <h3 className="text-[#1E3A7B] text-xl font-extrabold mt-0.5">
-    #019576
-  </h3>
-</div>
+            {/* FMC Badge — repositioned to sit inside the padded area */}
+            <div className="absolute top-0 left-0 z-20 px-5 py-3 rounded-2xl shadow-lg border border-[#C9A73A]/30 bg-gradient-to-br from-[#F4D96A] via-[#D7B03F] via-50% to-[#A97B18]">
+              <p className="text-[10px] uppercase tracking-[3px] text-[#1E3A7B] font-semibold">
+                FMC License
+              </p>
+              <h3 className="text-[#1E3A7B] text-xl font-extrabold mt-0.5">
+                #019576
+              </h3>
+            </div>
+
             {/* Image */}
             <img
               src={aboutImage}
@@ -77,9 +79,7 @@ export default function AboutPreview() {
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
-
             <div className="flex items-center gap-2 mb-5">
-              {/* <div className="w-6 h-0.5 bg-[#C8960A]" /> */}
               <p className="uppercase tracking-[4px] text-[#C8960A] font-semibold text-xs">
                 About Aeromar
               </p>
@@ -115,18 +115,15 @@ export default function AboutPreview() {
 
             <div className="flex items-center gap-4">
               <Link
-  to="/services"
-  className="group bg-[#1E3A7B] hover:bg-[#162d61] text-white px-7 py-3 text-sm font-semibold transition-all duration-300 inline-flex items-center gap-2"
->
-  Explore Our Services
-  <ArrowUpRight
-    size={15}
-    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-  />
-</Link>
-              {/* <button className="text-[#1E3A7B] text-sm font-semibold underline underline-offset-4 hover:text-[#C8960A] transition-colors duration-300">
-                Meet the team 
-              </button> */}
+                to="/services"
+                className="group bg-[#1E3A7B] hover:bg-[#162d61] text-white px-7 py-3 text-sm font-semibold transition-all duration-300 inline-flex items-center gap-2"
+              >
+                Explore Our Services
+                <ArrowUpRight
+                  size={15}
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </Link>
             </div>
 
           </div>

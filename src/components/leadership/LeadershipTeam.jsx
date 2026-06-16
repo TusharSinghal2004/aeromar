@@ -54,21 +54,13 @@ function LeaderCard({ leader, delay, inView }) {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-
-    // Distance from center, normalized -1 to 1
     const percentX = (x - centerX) / centerX;
     const percentY = (y - centerY) / centerY;
-
-    const maxTilt = 8; // degrees
-    setTilt({
-      rotateY: percentX * maxTilt,
-      rotateX: -percentY * maxTilt,
-    });
+    const maxTilt = 8;
+    setTilt({ rotateY: percentX * maxTilt, rotateX: -percentY * maxTilt });
   };
 
-  const handleMouseLeave = () => {
-    setTilt({ rotateY: 0, rotateX: 0 });
-  };
+  const handleMouseLeave = () => setTilt({ rotateY: 0, rotateX: 0 });
 
   return (
     <div
@@ -86,11 +78,13 @@ function LeaderCard({ leader, delay, inView }) {
           tilt.rotateX || tilt.rotateY
             ? "transform 0.1s ease-out, opacity 0.6s ease"
             : `opacity 0.6s ease ${delay}s, transform 0.5s ease`,
-        boxShadow: (tilt.rotateX || tilt.rotateY) ? "0 24px 48px -12px rgba(8,18,41,0.25)" : "0 0px 0px rgba(0,0,0,0)",
+        boxShadow: (tilt.rotateX || tilt.rotateY)
+          ? "0 24px 48px -12px rgba(8,18,41,0.25)"
+          : "0 0px 0px rgba(0,0,0,0)",
       }}
     >
-      {/* Image */}
-      <div className="relative h-[280px] overflow-hidden">
+      {/* Image — shorter on mobile */}
+      <div className="relative h-[220px] sm:h-[280px] overflow-hidden">
         <img
           src={leader.image}
           alt={leader.name}
@@ -98,27 +92,27 @@ function LeaderCard({ leader, delay, inView }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#081229] via-[#081229]/50 to-transparent" />
 
-        <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 flex items-end justify-between">
           <div>
-            <h3 className="text-2xl font-extrabold text-white">{leader.name}</h3>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white">{leader.name}</h3>
             <p className="text-[#C8960A] text-sm font-semibold mt-0.5">{leader.role}</p>
           </div>
-          <div className="w-10 h-10 rounded-full bg-[#C8960A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-            <ArrowUpRight size={16} className="text-[#081229]" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#C8960A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+            <ArrowUpRight size={15} className="text-[#081229]" />
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <p className="text-gray-500 text-sm leading-relaxed mb-6">
+      <div className="p-4 sm:p-6">
+        <p className="text-gray-500 text-sm leading-relaxed mb-4 sm:mb-6">
           {leader.description}
         </p>
 
-        <div className="grid grid-cols-2 gap-3 pt-5 border-t border-[#E2E8F0]">
+        <div className="grid grid-cols-2 gap-3 pt-4 sm:pt-5 border-t border-[#E2E8F0]">
           {leader.stats.map(({ value, label }) => (
-            <div key={label} className="bg-[#F8F9FB] rounded-xl p-3.5">
-              <p className="text-[#1E3A7B] text-xl font-extrabold">{value}</p>
+            <div key={label} className="bg-[#F8F9FB] rounded-xl p-3 sm:p-3.5">
+              <p className="text-[#1E3A7B] text-lg sm:text-xl font-extrabold">{value}</p>
               <p className="text-gray-400 text-xs mt-0.5">{label}</p>
             </div>
           ))}
@@ -133,13 +127,13 @@ export default function LeadershipSection() {
   const [gridRef, gridInView] = useInView(0.1);
 
   return (
-    <section className="py-12 lg:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section className="py-10 lg:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Header */}
         <div
           ref={headerRef}
-          className="text-center max-w-2xl mx-auto mb-10"
+          className="text-center max-w-2xl mx-auto mb-8 sm:mb-10"
           style={{
             opacity: headerInView ? 1 : 0,
             transform: headerInView ? "translateY(0px)" : "translateY(32px)",
@@ -151,7 +145,7 @@ export default function LeadershipSection() {
               Leadership
             </p>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-[#081229] leading-tight mb-4">
             Led By Industry Veterans
           </h2>
           <p className="text-gray-500 text-sm leading-relaxed">
@@ -161,7 +155,7 @@ export default function LeadershipSection() {
         </div>
 
         {/* Cards */}
-        <div ref={gridRef} className="grid lg:grid-cols-2 gap-6">
+        <div ref={gridRef} className="grid sm:grid-cols-2 gap-5 sm:gap-6">
           {leaders.map((leader, i) => (
             <LeaderCard
               key={leader.name}
@@ -170,8 +164,8 @@ export default function LeadershipSection() {
               inView={gridInView}
             />
           ))}
-
         </div>
+
       </div>
     </section>
   );

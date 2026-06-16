@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-[#081229] text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Main Footer */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="py-10 lg:py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
-          {/* Company */}
-          <div>
+          {/* Company — full width on mobile */}
+          <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 bg-[#C8960A] flex items-center justify-center flex-shrink-0">
                 <Ship size={18} className="text-[#081229]" />
@@ -34,23 +34,11 @@ export default function Footer() {
               </p>
               <p className="text-gray-500 text-xs">OTI License No. 019576</p>
             </div>
-
-            {/* Social Icons */}
-            <div className="flex gap-2">
-              {[].map((Icon, i) => (
-                <button
-                  key={i}
-                  className="w-8 h-8 border border-[#20304F] flex items-center justify-center hover:border-[#C8960A] hover:text-[#C8960A] transition-all duration-300 text-gray-500"
-                >
-                  <Icon size={13} />
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-5">
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-4 lg:mb-5">
               Services
             </h4>
             <ul className="space-y-2.5">
@@ -76,10 +64,10 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-5">
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-4 lg:mb-5">
               Company
             </h4>
-            <ul className="space-y-2.5 mb-7">
+            <ul className="space-y-2.5 mb-6">
               {[
                 { label: "About", to: "/about" },
                 { label: "Leadership", to: "/leadership" },
@@ -113,9 +101,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-5">
+          {/* Contact — full width on mobile */}
+          <div className="col-span-2 lg:col-span-1">
+            <h4 className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-4 lg:mb-5">
               Contact
             </h4>
 
@@ -137,20 +125,19 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Mail size={13} className="text-[#C8960A] flex-shrink-0" />
-                <a href="mailto:info@aeromarglobal.com" className="text-gray-400 text-xs hover:text-white transition-colors duration-200">
+                <a href="mailto:info@aeromarglobal.com" className="text-gray-400 text-xs hover:text-white transition-colors duration-200 break-all">
                   info@aeromarglobal.com
                 </a>
               </div>
             </div>
 
             {/* Mini CTA */}
-            <div className="mt-7 border border-[#1E3A7B]/40 rounded-xl p-4">
+            <div className="mt-6 border border-[#1E3A7B]/40 rounded-xl p-4">
               <p className="text-white text-xs font-semibold mb-1">Ready to ship?</p>
               <p className="text-gray-500 text-[11px] mb-3">Get a quote in under 2 minutes.</p>
               <Link
                 to="/quote"
-                className="w-full bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-[#FFFFFF] font-bold text-xs py-2 flex items-center justify-center rounded-lg"
-                
+                className="w-full bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-white font-bold text-xs py-2 flex items-center justify-center rounded-lg"
               >
                 Get a Quote
               </Link>
@@ -160,7 +147,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#20304F] py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+        <div className="border-t border-[#20304F] py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-center">
           <p className="text-gray-600 text-[11px]">
             © 2026 Aeromar Global Logistics Solutions LLC. All rights reserved.
           </p>

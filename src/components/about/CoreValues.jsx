@@ -62,7 +62,7 @@ export default function CoreValues() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-gray-200">
+        <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-l border-gray-200">
           {values.map((value, i) => {
             const Icon = value.icon;
             const isHovered = hovered === i;
@@ -77,9 +77,9 @@ export default function CoreValues() {
                   transform: visible ? "translateY(0)" : "translateY(28px)",
                   transition: `opacity 0.6s ease ${0.15 + i * 0.1}s, transform 0.6s ease ${0.15 + i * 0.1}s`,
                 }}
-                className="relative p-5 border-r border-b border-gray-200 flex flex-col overflow-hidden"
+                className="relative p-4 sm:p-5 border-r border-b border-gray-200 flex flex-col overflow-hidden"
               >
-                {/* Hover fill background */}
+                {/* Hover fill */}
                 <div
                   style={{
                     transform: isHovered ? "translateY(0%)" : "translateY(100%)",
@@ -89,12 +89,12 @@ export default function CoreValues() {
                 />
 
                 {/* Icon */}
-                <div className="relative mb-4">
+                <div className="relative mb-3 sm:mb-4">
                   <Icon
-                    size={24}
+                    size={22}
                     strokeWidth={1.8}
                     style={{
-                      color: isHovered ? "#C8960A" : "#C8960A",
+                      color: "#C8960A",
                       transform: isHovered ? "scale(1.15) rotate(-6deg)" : "scale(1) rotate(0deg)",
                       transition: "transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)",
                     }}
@@ -107,7 +107,7 @@ export default function CoreValues() {
                     color: isHovered ? "#ffffff" : "#1E3A7B",
                     transition: "color 0.3s ease",
                   }}
-                  className="relative text-base font-bold mb-2"
+                  className="relative text-sm sm:text-base font-bold mb-2"
                 >
                   {value.title}
                 </h3>
@@ -119,7 +119,7 @@ export default function CoreValues() {
                     transition: "width 0.35s ease 0.05s",
                     backgroundColor: "#C8960A",
                   }}
-                  className="relative h-[2px] mb-3"
+                  className="relative h-[2px] mb-2 sm:mb-3"
                 />
 
                 {/* Description */}
@@ -128,7 +128,7 @@ export default function CoreValues() {
                     color: isHovered ? "rgba(255,255,255,0.75)" : "",
                     transition: "color 0.3s ease",
                   }}
-                  className="relative text-gray-500 text-xs md:text-sm leading-[1.75]"
+                  className="relative text-gray-500 text-xs leading-[1.75]"
                 >
                   {value.description}
                 </p>
