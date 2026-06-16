@@ -13,6 +13,9 @@ import CustomsBrokerage from "../pages/CustomsBrokerage";
 import Warehousing from "../pages/Warehousing";
 import TruckingDrayage from "../pages/TruckingDrayage";
 import DoorToDoorLogistics from "../pages/DoorToDoorLogistics";
+import LegalPrivacy from "../pages/LegalPrivacy";
+import LegalTerms from "../pages/LegalTerms";
+
 
 export default function AppRoutes() {
   return (
@@ -30,6 +33,9 @@ export default function AppRoutes() {
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/quote" element={<Quote />} />
+      <Route path="/legal-privacy" element={<LegalPrivacy />} />
+      <Route path="/legal-terms" element={<LegalTerms />} />
+
     </Routes>
   );
 }

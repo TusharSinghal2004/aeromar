@@ -79,7 +79,7 @@ export default function LeadershipHero() {
           {/* Description */}
           <p style={fade(0.38)} className="text-sm md:text-base text-white/70 leading-7 max-w-lg mb-8">
             Meet the founding team behind Aeromar — senior operators with the
-            relationships, scar tissue, and judgment global shipping demands.
+            relationships, scar tissue, and judgment for global shipping demands.
           </p>
 
           {/* Stats */}

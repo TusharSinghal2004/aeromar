@@ -6,7 +6,7 @@ const heroImage = "https://images.unsplash.com/photo-1521791136064-7986c2920216?
 const contacts = [
   { icon: Phone,         label: "Call Us",      value: "+1 (555) 000-0000",       sub: "Mon–Fri, 8am–6pm EST" },
   { icon: Mail,          label: "Email",         value: "hello@aeromarglobal.com", sub: "We reply within 4 hours" },
-  { icon: MessageCircle, label: "WhatsApp",      value: "+1 (555) 000-0000",       sub: "Quick responses guaranteed" },
+  // { icon: MessageCircle, label: "WhatsApp",      value: "+1 (555) 000-0000",       sub: "Quick responses guaranteed" },
   { icon: Clock,         label: "Response Time", value: "Under 4 Hours",           sub: "Business hours guaranteed" },
 ];
 
@@ -25,7 +25,7 @@ export default function ContactHero() {
   });
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
 
       {/* Background */}
       <img
@@ -52,20 +52,20 @@ export default function ContactHero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 w-full py-20 md:py-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full py-24 md:py-28">
         <div className="max-w-3xl">
 
           {/* Label */}
-          <div style={fade(0.15)} className="flex items-center gap-3 mb-6">
-            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-s font-bold">
-              Contact US
+          <div style={fade(0.15)} className="flex items-center gap-3 mb-5">
+            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-xs font-bold">
+              Contact Us
             </span>
           </div>
 
           {/* Heading */}
           <h1
             style={fade(0.26)}
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5"
           >
             Talk to a{" "}
             <span className="relative inline-block">
@@ -83,15 +83,15 @@ export default function ContactHero() {
           </h1>
 
           {/* Description */}
-          <p style={fade(0.38)} className="text-sm md:text-base text-white/70 leading-7 max-w-lg mb-10">
+          <p style={fade(0.38)} className="text-sm md:text-base text-white/70 leading-7 max-w-lg mb-8">
             No call centers. No bots. Reach our team directly — by phone,
             email, WhatsApp, or the form below.
           </p>
 
-          {/* Contact cards */}
+          {/* Contact cards — 1 col on mobile, 2 col on sm, 4 col on md+ */}
           <div
             style={fade(0.5)}
-            className="grid grid-cols-2 md:grid-cols-4 gap-3"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"
           >
             {contacts.map(({ icon: Icon, label, value, sub }, i) => (
               <ContactCard
@@ -116,40 +116,48 @@ export default function ContactHero() {
 }
 
 function ContactCard({ Icon, label, value, sub, delay, visible }) {
-  const [hovered, setHovered] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      onTouchStart={() => setActive(true)}
+      onTouchEnd={() => setTimeout(() => setActive(false), 300)}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
         transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`,
-        background: hovered ? "rgba(200,150,10,0.12)" : "rgba(255,255,255,0.05)",
-        borderColor: hovered ? "#C8960A" : "rgba(255,255,255,0.1)",
+        background: active ? "rgba(200,150,10,0.12)" : "rgba(255,255,255,0.05)",
+        borderColor: active ? "#C8960A" : "rgba(255,255,255,0.1)",
+        WebkitTapHighlightColor: "transparent",
       }}
-      className="border p-4 flex flex-col gap-2 cursor-default"
+      className="border p-4 sm:p-5 flex flex-row sm:flex-col gap-4 sm:gap-2 cursor-default"
     >
-      <Icon
-        size={18}
-        style={{
-          color: hovered ? "#C8960A" : "rgba(255,255,255,0.5)",
-          transform: hovered ? "scale(1.15)" : "scale(1)",
-          transition: "color 0.25s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
-        }}
-      />
-      <div>
-        <p className="text-[9px] uppercase tracking-[0.2em] text-white/40 font-semibold mb-0.5">
+      {/* Icon */}
+      <div className="flex-shrink-0 mt-0.5">
+        <Icon
+          size={20}
+          style={{
+            color: active ? "#C8960A" : "rgba(255,255,255,0.5)",
+            transform: active ? "scale(1.15)" : "scale(1)",
+            transition: "color 0.25s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
+          }}
+        />
+      </div>
+
+      {/* Text */}
+      <div className="min-w-0">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold mb-1">
           {label}
         </p>
         <p
-          style={{ color: hovered ? "#C8960A" : "#fff", transition: "color 0.25s ease" }}
-          className="text-xs font-bold leading-tight"
+          className="text-sm font-bold leading-snug break-words"
+          style={{ color: active ? "#C8960A" : "#fff", transition: "color 0.25s ease" }}
         >
           {value}
         </p>
-        <p className="text-[10px] text-white/40 mt-0.5">{sub}</p>
+        <p className="text-xs text-white/40 mt-1 leading-snug">{sub}</p>
       </div>
     </div>
   );

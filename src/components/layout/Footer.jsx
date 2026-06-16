@@ -1,6 +1,15 @@
 import { Ship, MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const serviceLinks = [
+  { label: "Ocean Freight",          to: "/ocean-freight" },
+  { label: "Air Freight",            to: "/air-freight" },
+  { label: "Customs Brokerage",      to: "/customs-brokerage" },
+  { label: "Warehousing",            to: "/warehousing" },
+  { label: "Trucking & Drayage",     to: "/trucking-drayage" },
+  { label: "Door-To-Door Logistics", to: "/door-to-door" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[#081229] text-white">
@@ -42,20 +51,13 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2.5">
-              {[
-                "Ocean Freight",
-                "Air Freight",
-                "Customs Brokerage",
-                "Warehousing",
-                "Trucking & Drayage",
-                "Door-To-Door Logistics",
-              ].map((item) => (
-                <li key={item}>
+              {serviceLinks.map(({ label, to }) => (
+                <li key={label}>
                   <Link
-                    to="/services"
+                    to={to}
                     className="text-gray-400 text-xs hover:text-white transition-colors duration-200"
                   >
-                    {item}
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -69,13 +71,13 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 mb-6">
               {[
-                { label: "About", to: "/about" },
-                { label: "Leadership", to: "/leadership" },
-                { label: "Blog", to: "/blog" },
-                { label: "Request Quote", to: "/quote" },
-                { label: "Contact", to: "/contact" },
-                { label: "Privacy Policy", to: "/privacy" },
-                { label: "Terms & Conditions", to: "/terms" },
+                { label: "About",            to: "/about" },
+                { label: "Leadership",       to: "/leadership" },
+                { label: "Blog",             to: "/blog" },
+                { label: "Request Quote",    to: "/quote" },
+                { label: "Contact",          to: "/contact" },
+                { label: "Privacy Policy",   to: "/legal-privacy" },
+                { label: "Terms & Conditions", to: "/legal-terms" },
               ].map(({ label, to }) => (
                 <li key={label}>
                   <Link

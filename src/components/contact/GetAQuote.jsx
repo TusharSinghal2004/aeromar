@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MapPin, Phone, Mail, MessageCircle, ArrowRight, Send } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight, Send } from "lucide-react";
 
 const contactInfo = [
   {
@@ -16,11 +16,6 @@ const contactInfo = [
     icon: Mail,
     label: "Email",
     lines: ["info@aeromarglobal.com"],
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    lines: ["+1 (732) 555-1234"],
   },
 ];
 
