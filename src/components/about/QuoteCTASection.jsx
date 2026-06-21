@@ -59,13 +59,7 @@ export default function QuoteCTASection() {
                 style={fade(0.16)}
                 className="block text-[#081229] text-xl sm:text-2xl lg:text-[2.1rem]"
               >
-                Request a freight quote today —
-              </span>
-              <span
-                style={fade(0.24)}
-                className="block text-[#C8960A] text-xl sm:text-2xl lg:text-[2.1rem] mt-0.5"
-              >
-                we respond within 4 business hours.
+                Request a freight quote today 
               </span>
             </h2>
 

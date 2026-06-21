@@ -4,9 +4,9 @@ import { Phone, Mail, Clock } from "lucide-react";
 const heroImage = "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80";
 
 const contacts = [
-  { icon: Phone, label: "Call Us",      value: "+1 (732) 555-1234",       sub: "Mon–Fri, 8am–6pm EST" },
-  { icon: Mail,  label: "Email",         value: "info@aeromarglobal.com", sub: "We reply within 4 hours" },
-  { icon: Clock, label: "Response Time", value: "Under 4 Hours",           sub: "Business hours guaranteed" },
+  { icon: Phone, label: "Call Us",      value: "7329634537",       sub: "Mon–Fri, 8am–6pm EST" },
+  { icon: Mail,  label: "Email",         value: "inside.sales@aeromar.us", sub: "We reply on time" },
+  { icon: Clock, label: "Response Time", value: "Same Day",           sub: "Business emails don't sit" },
 ];
 
 export default function ContactHero() {

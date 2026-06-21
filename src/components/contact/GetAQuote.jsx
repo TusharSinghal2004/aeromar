@@ -5,17 +5,17 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Office",
-    lines: ["1234 Harbor Boulevard", "Edison, NJ 08837, USA"],
+    lines: ["717 Main Street, Metuchen NJ 08840 USA"],
   },
   {
     icon: Phone,
     label: "Phone",
-    lines: ["+1 (732) 555-1234"],
+    lines: ["7329634537"],
   },
   {
     icon: Mail,
     label: "Email",
-    lines: ["info@aeromarglobal.com"],
+    lines: ["inside.sales@aeromar.us"],
   },
 ];
 

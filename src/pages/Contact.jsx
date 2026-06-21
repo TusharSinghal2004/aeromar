@@ -3,7 +3,6 @@ import Footer from "../components/layout/Footer";
 import PageTransition from "../components/common/PageTransition";
 import ContactHero from "../components/contact/ContactHero";
 import GetAQuote from "../components/contact/GetAQuote";
-import Maps from "../components/contact/Maps";
 
 
 export default function Leadership() {
@@ -12,7 +11,6 @@ export default function Leadership() {
       <Navbar />
       <ContactHero />
       <GetAQuote />
-      <Maps />
       <Footer />
     </PageTransition>
   );

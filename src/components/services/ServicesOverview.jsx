@@ -7,39 +7,43 @@ import {
 const services = [
   {
     icon: Ship,
-    title: "Ocean Freight",
+    title: "Freight Forwarding",
     description: "FCL, LCL, NVOCC programs, carrier contracts, and global trade lane management.",
-    link: "/ocean-freight",
   },
   {
     icon: Plane,
-    title: "Air Freight",
+    title: "Custom Clearance",
     description: "Priority air cargo, expedited shipping, charter solutions, and time-critical freight.",
-    link: "/air-freight",
   },
   {
     icon: FileBadge,
-    title: "Customs Brokerage",
-    description: "Import clearance, compliance management, classifications, duties, and documentation.",
-    link: "/customs-brokerage",
+    title: "Cargo Insurance",
+    description: "End-to-end cargo coverage protecting from origin to destination",
   },
   {
     icon: Warehouse,
-    title: "Warehousing",
+    title: "Warehousing and Distribution",
     description: "Storage, bonded facilities, inventory control, fulfillment, and distribution.",
-    link: "/warehousing",
   },
   {
     icon: Truck,
-    title: "Trucking & Drayage",
+    title: "Drayage & Domestic Truck Delivery",
     description: "Port drayage, intermodal transportation, inland trucking, and final-mile delivery.",
-    link: "/trucking-drayage",
   },
   {
     icon: Workflow,
-    title: "Door-to-Door Logistics",
-    description: "Complete logistics management from supplier pickup through final delivery.",
-    link: "/door-to-door",
+    title: "Purchase Order Management",
+    description: "Centralized PO tracking, vendor coordination and milestone visibility.",
+  },
+  {
+    icon: Workflow,
+    title: "Consulting and Advice",
+    description: "Strategic logistics consulting to optimize your supply chain, reduce costs and navigate trade.",
+  },
+  {
+    icon: Workflow,
+    title: "Procurement & Sourcing",
+    description: "End-to-end venfor identification, RFQ management and Supplier vending",
   },
 ];
 

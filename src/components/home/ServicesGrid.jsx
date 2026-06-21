@@ -20,40 +20,44 @@ function useInView(threshold = 0.15) {
 
 const services = [
   {
-    title: "Ocean Freight",
-    route: "/ocean-freight",
-    description: "FCL, LCL & project cargo via our global carrier network with real-time container tracking.",
     icon: Ship,
+    title: "Freight Forwarding",
+    description: "FCL, LCL, NVOCC programs, carrier contracts, and global trade lane management.",
   },
   {
-    title: "Air Freight",
-    route: "/air-freight",
-    description: "Time-critical, perishable and high-value air cargo handled with priority booking worldwide.",
     icon: Plane,
+    title: "Custom Clearance",
+    description: "Priority air cargo, expedited shipping, charter solutions, and time-critical freight.",
   },
   {
-    title: "Customs Brokerage",
-    route: "/customs-brokerage",
-    description: "Licensed U.S. customs clearance with zero-surprise compliance and full documentation.",
     icon: FileBadge,
+    title: "Cargo Insurance",
+    description: "End-to-end cargo coverage protecting from origin to destination",
   },
   {
-    title: "Warehousing",
-    route: "/warehousing",
-    description: "Bonded, FTZ and DC operations across key U.S. gateways with pick-and-pack services.",
     icon: Warehouse,
+    title: "Warehousing and Distribution",
+    description: "Storage, bonded facilities, inventory control, fulfillment, and distribution.",
   },
   {
-    title: "Trucking & Drayage",
-    route: "/trucking-drayage",
-    description: "Port drayage, OTR and final-mile delivery across North America. FTL, LTL, multimodal.",
     icon: Truck,
+    title: "Drayage & Domestic Truck Delivery",
+    description: "Port drayage, intermodal transportation, inland trucking, and final-mile delivery.",
   },
   {
-    title: "Door-to-Door Logistics",
-    route: "/door-to-door",
-    description: "One contract, one team — origin pickup to final delivery with full visibility across every leg.",
     icon: Workflow,
+    title: "Purchase Order Management",
+    description: "Centralized PO tracking, vendor coordination and milestone visibility.",
+  },
+  {
+    icon: Workflow,
+    title: "Consulting and Advice",
+    description: "Strategic logistics consulting to optimize your supply chain, reduce costs and navigate trade.",
+  },
+  {
+    icon: Workflow,
+    title: "Procurement & Sourcing",
+    description: "End-to-end venfor identification, RFQ management and Supplier vending",
   },
 ];
 

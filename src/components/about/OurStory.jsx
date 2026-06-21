@@ -56,9 +56,8 @@ export default function OurStory() {
           <div className="space-y-5">
 
             <p style={fade(0.18)} className="text-gray-500 text-sm md:text-[0.95rem] leading-7">
-              Aeromar was founded by Thomas Marano and Russell Gomes —
-              two career logistics operators with more than three decades
-              each across NVOCC, freight forwarding, and customs brokerage.
+              Aeromar was founded by team with almost 100 years of experience
+              in offering all kinds of simple logistics soltions to complicated logistics challenges.
               The premise was simple: global shippers deserve a
               U.S.-headquartered partner where the people negotiating their
               carrier contracts are the same people answering the phone

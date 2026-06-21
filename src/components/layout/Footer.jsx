@@ -1,15 +1,6 @@
 import { Ship, MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const serviceLinks = [
-  { label: "Ocean Freight",          to: "/ocean-freight" },
-  { label: "Air Freight",            to: "/air-freight" },
-  { label: "Customs Brokerage",      to: "/customs-brokerage" },
-  { label: "Warehousing",            to: "/warehousing" },
-  { label: "Trucking & Drayage",     to: "/trucking-drayage" },
-  { label: "Door-To-Door Logistics", to: "/door-to-door" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-[#081229] text-white">
@@ -36,13 +27,6 @@ export default function Footer() {
               USA, India, the Middle East, Europe,
               and Southeast Asia.
             </p>
-
-            <div className="mb-5">
-              <p className="uppercase tracking-[3px] text-[#C8960A] text-[10px] font-semibold mb-1">
-                FMC License
-              </p>
-              <p className="text-gray-500 text-xs">OTI License No. 019576</p>
-            </div>
           </div>
 
           {/* Services */}
@@ -51,14 +35,18 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2.5">
-              {serviceLinks.map(({ label, to }) => (
-                <li key={label}>
-                  <Link
-                    to={to}
-                    className="text-gray-400 text-xs hover:text-white transition-colors duration-200"
-                  >
-                    {label}
-                  </Link>
+              {[
+                "Freight Forwarding",
+                "Custom Clearance",
+                "Cargo Insurance",
+                "Warehousing and Distribution",
+                "Drayage & Domestic Truck Delivery",
+                "Purchase Order Management",
+                "Consulting and Advice",
+                "Procurement & Sourcing",
+              ].map((label) => (
+                <li key={label} className="text-gray-400 text-xs">
+                  {label}
                 </li>
               ))}
             </ul>
@@ -71,12 +59,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 mb-6">
               {[
-                { label: "About",            to: "/about" },
-                { label: "Leadership",       to: "/leadership" },
-                { label: "Blog",             to: "/blog" },
-                { label: "Request Quote",    to: "/quote" },
-                { label: "Contact",          to: "/contact" },
-                { label: "Privacy Policy",   to: "/legal-privacy" },
+                { label: "About",              to: "/about" },
+                { label: "Request Quote",      to: "/quote" },
+                { label: "Contact",            to: "/contact" },
+                { label: "Privacy Policy",     to: "/legal-privacy" },
                 { label: "Terms & Conditions", to: "/legal-terms" },
               ].map(({ label, to }) => (
                 <li key={label}>
@@ -113,30 +99,28 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin size={13} className="text-[#C8960A] mt-0.5 flex-shrink-0" />
                 <p className="text-gray-400 text-xs leading-5">
-                  1234 Harbor Boulevard<br />
-                  Edison, NJ 08837, USA
+                  717 Main Street,<br />
+                  Metuchen NJ 08840, USA
                 </p>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone size={13} className="text-[#C8960A] flex-shrink-0" />
-                <a href="tel:+17325551234" className="text-gray-400 text-xs hover:text-white transition-colors duration-200">
-                  +1 (732) 555-1234
+                <a href="tel:7329634537" className="text-gray-400 text-xs hover:text-white transition-colors duration-200">
+                  7329634537
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail size={13} className="text-[#C8960A] flex-shrink-0" />
-                <a href="mailto:info@aeromarglobal.com" className="text-gray-400 text-xs hover:text-white transition-colors duration-200 break-all">
-                  info@aeromarglobal.com
+                <a href="mailto:inside.sales@aeromar.us" className="text-gray-400 text-xs hover:text-white transition-colors duration-200 break-all">
+                  inside.sales@aeromar.us
                 </a>
               </div>
             </div>
 
             {/* Mini CTA */}
             <div className="mt-6 border border-[#1E3A7B]/40 rounded-xl p-4">
-              <p className="text-white text-xs font-semibold mb-1">Ready to ship?</p>
-              <p className="text-gray-500 text-[11px] mb-3">Get a quote in under 2 minutes.</p>
               <Link
                 to="/quote"
                 className="w-full bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-white font-bold text-xs py-2 flex items-center justify-center rounded-lg"
