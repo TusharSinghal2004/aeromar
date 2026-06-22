@@ -89,20 +89,10 @@ export default function AboutPreview() {
               <span className="text-[#1E3A7B]"> built on relationships.</span>
             </h2>
 
-            <p className="text-gray-500 text-sm leading-relaxed mb-8">
-              Our management team brings over 100 years of combined experience
-              in international freight, ocean logistics, and global trade —
-              senior professionals who have seen every market, every challenge,
-              and every opportunity the industry has to offer.
-            </p>
 
             <div className="space-y-3 mb-10">
               {[
-                "30+ years operational experience",
-                "Direct carrier & terminal relationships",
-                "End-to-end global logistics expertise",
-                "Personalized, senior-led client support",
-                "USA, India, Middle East, Europe & Asia focus",
+                "Over 100+ years of experience in management team"
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle

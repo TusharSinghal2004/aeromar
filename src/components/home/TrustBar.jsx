@@ -1,7 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-
-const carriers = ["Maersk", "CMA CGM", "ONE", "Yang Ming", "MSC", "Wan Hai"];
-
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -86,19 +83,9 @@ export default function StatsStrip() {
             transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
           }}
         >
-          <p className="text-center text-xs font-semibold text-[#1E3A7B] tracking-widest uppercase mb-6">
-            All Major Ocean Carriers
+          <p className="text-center text-S font-semibold text-[#1E3A7B] tracking-widest uppercase mb-6">
+            All Main Line Carriers
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
-            {carriers.map((name) => (
-              <span
-                key={name}
-                className="px-4 py-1.5 rounded-full border border-[#1E3A7B]/20 bg-[#1E3A7B]/5 text-xs font-semibold text-[#1E3A7B]/70 tracking-wide"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
         </div>
 
       </div>
