@@ -45,6 +45,16 @@ const services = [
     title: "Procurement & Sourcing",
     description: "End-to-end venfor identification, RFQ management and Supplier vending",
   },
+  {
+    icon: Truck,
+    title: "Help you improve your footprint in US market",
+    description: "End-to-end vendor identification, RFQ management, and strategic supplier onboarding to scale your boots-on-the-ground presence.",
+  },
+  {
+    icon: ArrowUpRight,
+    title: "IOR (Importer On Record)",
+    description: "Complete handling of customs clearance, legal compliance, import duties, and paperwork to ensure seamless entry into the United States",
+  },
 ];
 
 export default function ServicesOverview() {
