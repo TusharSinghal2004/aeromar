@@ -77,13 +77,14 @@ export default function StatsStrip() {
 
         <div
           ref={carrierRef}
+          className="flex items-center justify-center"
           style={{
             opacity: carrierInView ? 1 : 0,
             transform: carrierInView ? "translateY(0px)" : "translateY(32px)",
             transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
           }}
         >
-          <p className="text-center text-S font-semibold text-[#1E3A7B] tracking-widest uppercase mb-6">
+          <p className="text-center text-S font-semibold text-[#1E3A7B] tracking-widest uppercase my-4 md:my-6">
             All Main Line Carriers
           </p>
         </div>

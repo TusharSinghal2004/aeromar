@@ -89,7 +89,6 @@ export default function AboutPreview() {
               <span className="text-[#1E3A7B]"> built on relationships.</span>
             </h2>
 
-
             <div className="space-y-3 mb-10">
               {[
                 "Over 100+ years of experience in management team"

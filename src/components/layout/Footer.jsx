@@ -114,7 +114,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Mail size={13} className="text-[#C8960A] flex-shrink-0" />
                 <a href="mailto:inside.sales@aeromar.us" className="text-gray-400 text-xs hover:text-white transition-colors duration-200 break-all">
-                  inside.sales@aeromar.us
+                  inside.sales@aeromarus.com
                 </a>
               </div>
             </div>
