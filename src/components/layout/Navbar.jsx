@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
 
-const navLinks = ["HOME", "ABOUT", "SERVICES", "CONTACT"];
+const navLinks = ["HOME", "ABOUT", "SERVICES", "EUDORA", "CONTACT",];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

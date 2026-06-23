@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import Quote from "../pages/Quote";
 import LegalPrivacy from "../pages/LegalPrivacy";
 import LegalTerms from "../pages/LegalTerms";
+import Eudora from "../pages/Eudora"
 
 
 export default function AppRoutes() {
@@ -19,6 +20,8 @@ export default function AppRoutes() {
       <Route path="/quote" element={<Quote />} />
       <Route path="/legal-privacy" element={<LegalPrivacy />} />
       <Route path="/legal-terms" element={<LegalTerms />} />
+      <Route path="/eudora" element={<Eudora />} />
+
 
     </Routes>
   );

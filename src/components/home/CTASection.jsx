@@ -42,10 +42,13 @@ export default function CTASection() {
           </Link>
         </div>
 
-        <button className="group inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white/70 hover:text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-300">
-          Talk to Eudora about Procurement
-          <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-        </button>
+       <Link
+  to="/eudora"
+  className="group inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white/70 hover:text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+>
+  Talk to Eudora about Procurement
+  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+</Link>
 
       </div>
     </section>
