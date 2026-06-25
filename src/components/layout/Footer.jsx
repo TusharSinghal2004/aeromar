@@ -1,10 +1,32 @@
-import { Ship, MapPin, Phone, Mail } from "lucide-react";
+import { Ship, MapPin, Phone, Mail, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="bg-[#081229] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+
+        {/* Eudora Banner */}
+        <div className="border-b border-[#20304F] py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-[#C8960A]/15 flex items-center justify-center flex-shrink-0">
+              <Sparkles size={16} className="text-[#C8960A]" />
+            </div>
+            <div>
+              <p className="text-white font-semibold text-sm">Meet Eudora</p>
+              <p className="text-gray-400 text-xs leading-5">
+                Our procurement specialist — ready to help you source smarter.
+              </p>
+            </div>
+          </div>
+          <Link
+            to="/eudora"
+            className="flex-shrink-0 bg-[#C8960A] hover:bg-[#b8850a] transition-colors duration-300 text-white font-bold text-xs px-5 py-2.5 rounded-lg flex items-center gap-2"
+          >
+            <Sparkles size={13} />
+            Talk to Eudora About Procurement
+          </Link>
+        </div>
 
         {/* Main Footer */}
         <div className="py-10 lg:py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">

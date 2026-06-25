@@ -4,9 +4,9 @@ import { Phone, Mail, Clock } from "lucide-react";
 const heroImage = "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80";
 
 const contacts = [
-  { icon: Phone, label: "Call Us",      value: "7329634537",       sub: "Mon–Fri, 8am–6pm EST" },
-  { icon: Mail,  label: "Email",         value: "inside.sales@aeromar.us", sub: "We reply on time" },
-  { icon: Clock, label: "Response Time", value: "Same Day",           sub: "Business emails don't sit" },
+  { icon: Phone, label: "Call Us",      value: "7329634537",                   sub: "Mon–Fri, 8am–6pm EST" },
+  { icon: Mail,  label: "Email",         value: "inside.sales@aeromarus.com",   sub: "We reply on time" },
+  { icon: Clock, label: "Response Time", value: "Same Day",                     sub: "Business emails don't sit" },
 ];
 
 export default function ContactHero() {
@@ -82,12 +82,12 @@ export default function ContactHero() {
 
           <div
             style={fade(0.5)}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl w-full"
           >
-            {contacts.map(({ icon: Icon, label, value, sub }, i) => (
+            {contacts.map(({ icon, label, value, sub }, i) => (
               <ContactCard
                 key={label}
-                Icon={Icon}
+                Icon={icon}
                 label={label}
                 value={value}
                 sub={sub}
@@ -107,8 +107,6 @@ export default function ContactHero() {
 
 function ContactCard({ Icon, label, value, sub, delay, visible }) {
   const [active, setActive] = useState(false);
-
-  const displayValue = value.length > 22 ? value.replace("aeromarglobal", "aeromar") : value;
 
   return (
     <div
@@ -137,18 +135,18 @@ function ContactCard({ Icon, label, value, sub, delay, visible }) {
         />
       </div>
 
-      <div className="min-w-0">
+      <div>
         <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold mb-0.5">
           {label}
         </p>
         <p
-          className="text-sm font-bold leading-snug whitespace-nowrap"
+          className="text-xs font-bold leading-snug whitespace-nowrap"
           style={{ color: active ? "#C8960A" : "#fff", transition: "color 0.25s ease" }}
         >
-          {displayValue}
+          {value}
         </p>
-        <p className="text-xs text-white/40 mt-0.5 leading-snug whitespace-nowrap">{sub}</p>
+        <p className="text-xs text-white/40 mt-0.5 leading-snug">{sub}</p>
       </div>
     </div>
   );
-} 
+}

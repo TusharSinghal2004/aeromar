@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    lines: ["inside.sales@aeromar.us"],
+    lines: ["inside.sales@aeromarus.com"],
   },
 ];
 

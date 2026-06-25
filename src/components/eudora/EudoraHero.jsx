@@ -37,7 +37,13 @@ export default function EudoraHero() {
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
-            <span className="uppercase tracking-[0.3em] text-[#C8960A] text-xs font-bold">
+            <span style={{
+              textTransform: "uppercase",
+              letterSpacing: "0.3em",
+              color: "#C8960A",
+              fontSize: "0.75rem",
+              fontWeight: 700,
+            }}>
               Gateway to Asia
             </span>
           </div>
@@ -47,26 +53,51 @@ export default function EudoraHero() {
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(24px)",
               transition: "opacity 0.8s ease 0.38s, transform 0.8s ease 0.38s",
-              lineHeight: 1.08,
+              margin: 0,
+              padding: 0,
             }}
           >
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 7vw, 5rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.05, fontFamily: "serif" }}>
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2.8rem, 7vw, 5rem)",
+              fontWeight: 700,
+              color: "#ffffff",
+              lineHeight: 1.05,
+              fontFamily: "serif",
+            }}>
               Global
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 7vw, 5rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.05, fontFamily: "serif" }}>
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2.8rem, 7vw, 5rem)",
+              fontWeight: 700,
+              color: "#ffffff",
+              lineHeight: 1.05,
+              fontFamily: "serif",
+            }}>
               Sourcing.
             </span>
-            <span style={{ display: "block", fontSize: "clamp(2.8rem, 7vw, 5rem)", fontWeight: 300, fontStyle: "italic", color: "#C8960A", lineHeight: 1.1, fontFamily: "serif" }}>
+            <span style={{
+              display: "block",
+              fontSize: "clamp(2.8rem, 7vw, 5rem)",
+              fontWeight: 300,
+              color: "#C8960A",
+              lineHeight: 1.1,
+              fontFamily: "serif",
+            }}>
               Delivered.
             </span>
           </h1>
 
           <p
-            className="mt-6 max-w-md text-sm md:text-base text-white/70 leading-7"
+            className="mt-6 max-w-md leading-7"
             style={{
+              color: "rgba(255,255,255,0.7)",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
               transition: "opacity 0.8s ease 0.54s, transform 0.8s ease 0.54s",
+              fontSize: "clamp(14px, 1.1vw, 18px)",
+              maxWidth: "480px",
             }}
           >
             Bridging Asia's chemical manufacturing base with the world — through
