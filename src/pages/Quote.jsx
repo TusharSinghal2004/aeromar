@@ -107,8 +107,8 @@ export default function QuotePage() {
             {/* Contact details */}
             <div className="space-y-4">
               {[
-                { icon: Mail, label: "Email", value: "quotes@aeromarglobal.com", delay: "0.5s" },
-                { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", delay: "0.6s" },
+                { icon: Mail, label: "Email", value: "inside.sales@aeromarus.com", delay: "0.5s" },
+                { icon: Phone, label: "Phone", value: "7329634537", delay: "0.6s" },
               ].map(({ icon: Icon, label, value, delay }) => (
                 <div
                   key={label}

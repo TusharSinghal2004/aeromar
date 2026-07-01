@@ -142,7 +142,7 @@ export default function ContactSection() {
             >
               <div className="border-l-[3px] border-[#C8960A] pl-4 py-0.5">
                 <p className="text-xs text-[#1E3A7B] font-semibold leading-5">
-                  We respond to every inquiry within 4 business hours.
+                  We respond to every inquiry in time.
                 </p>
                 <p className="text-[11px] text-gray-400 mt-0.5">
                   Mon – Fri · 8 am – 6 pm EST
